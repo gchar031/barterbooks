@@ -2,13 +2,13 @@
 
 ## Overview
 
-**Barter Books** A web app that will allow college students to trade their books and notes with other college students as a more affordable solution for them to be more prepare for their courses by relieving some of the financial burden. This web app is designed with mobile accessibilty first in mind then desktop and tablet, therefore all the features are legible and functional for most mobile and desktop/tablet devices. Presently, only basic features for bartering are functional, however in the future more features, like the ones in the PVMP section, may be added to this web application. 
+**Barter Books** A web app that will allow college students to trade their books and notes with other college students as a more affordable solution for them to be more prepare for their courses by relieving some of the financial burden. This web app is designed with mobile accessibility first in mind, then desktop and tablet, therefore all the features are legible and functional for most mobile and desktop/tablet devices. Presently, only basic features for bartering are functional, however in the future more features, like the ones in the PVMP section, may be added to this web application. 
 
 <br>
 
 ## MVP
 
-The **Barter Books** MVP is to meet full CRUD on the back-end and front-end for barters allowing only registered users to have full access to these features. Unregistered users will be able to view all the available barters and can only request an exchange after registering or loggin in. 
+The **Barter Books** MVP is to meet full CRUD on the back-end and front-end for barters allowing only registered users to have full access to these features. Unregistered users will be able to view all the available barters and can only request an exchange after registering or logging in. 
 
 ### Goals
 
@@ -169,7 +169,7 @@ src
 - [ ] Change password feature.
 - [ ] Add pagination to barter index page.
 - [ ] Allow user to view any open barters they have requested.
-- [ ] Allow user to view any barters they have opend opened.
+- [ ] Allow user to view any barters they have opened and approved.
 - [ ] Allow user to view any past exchanges.
 - [ ] Allow user to add and edit their personal information: name, college/university name, and password.
 
