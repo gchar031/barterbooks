@@ -23,7 +23,7 @@ The **Barter Books** MVP is to meet full CRUD on the back-end and front-end for 
 
 ### Libraries and Dependencies
 
->List of all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
+>List of all supporting libraries and dependencies, and their role in this app.
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
@@ -37,34 +37,29 @@ The **Barter Books** MVP is to meet full CRUD on the back-end and front-end for 
 
 #### Wireframes
 
-![Dummy Link](url)
-
 - Mobile Landing
-
-![Dummy Link](url)
+<img src="https://user-images.githubusercontent.com/43050919/126642220-08bec1ff-e4df-4f13-b48a-ff52fdc1c80c.png" width="400" height="600" />
 
 - Mobile Barter Index
-
-![Dummy Link](url)
+<img src="https://user-images.githubusercontent.com/43050919/126642267-6d513b03-94ea-438f-869e-2617ad093a3a.png" width="400" height="600"/>
 
 - Mobile Barter Detail 
-
-![Dummy Link](url)
+<img src="https://user-images.githubusercontent.com/43050919/126642295-1c7acb4a-7799-4927-a7ba-04deb7c91171.png" width="400" height="600"/>
 
 - Mobile Create Barter
-
-![Desktop Barter Index](https://www.figma.com/file/8GXDO9ps9ghyWnC795s0JQ/BarterBooks?node-id=1%3A3)
+<img src="https://user-images.githubusercontent.com/43050919/126642322-20a36986-98fe-444f-809c-8d88b6440873.png" width="400" height="600"/>
 
 - Desktop Barter Index
-
-![Dummy Link](url)
+<img src="https://user-images.githubusercontent.com/43050919/126642393-14279ae2-3287-49df-8c9a-15500c3159e6.png" width="900" height="600"/>
 
 - Tablet Barter Detail 
+<img src="https://user-images.githubusercontent.com/43050919/126642442-67ecb957-2c8d-43da-96e2-f16fd5983739.png" width="900" height="600"/>
+
+
 
 #### Component Tree
 
-![Component Tree](https://user-images.githubusercontent.com/43050919/126587410-01d3f967-f7d6-4df2-ab58-b54e9835f95c.png)
-
+![Component Tree](https://user-images.githubusercontent.com/43050919/126634979-74313add-cb69-4417-997b-da06423c059e.png)
 
 #### Component Architecture
 
@@ -117,13 +112,37 @@ src
 
 #### Time Estimates
 
-> Use this section to estimate the time necessary to build out each of the components you've described above.
 
 | Task                | Priority | Estimated Time | Time Invested | Actual Time |
 | ------------------- | :------: | :------------: | :-----------: | :---------: |
-| Add Contact Form    |    L     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
-| TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
+| Install Ruby on Rails Package & Create React App    |    H     |    .5 hrs      |     .5 hrs     |    .5 hrs    |
+| Create Database    |    H     |    .5 hrs      |     .5 hrs     |   .5 hrs    |
+| Seed Database    |    H     |    1 hrs      |     1 hrs     |   1 hrs    |
+| Create Tables, Migrations & Models    |    H     |    1 hrs      |     1 hrs     |   1 hrs    |
+| Create CRUD Actions Back-End |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| Test all back-end CRUD actions    |    H     |   3 hrs      |     3 hrs     |   3 hrs    |
+| Test all register & login back-end actions    |    H     |   2 hrs      |    2 hrs     |   2 hrs    |
+| Create API-config file & CRUD methods   |    H     |   2 hrs      |     2 hrs     |   2 hrs    |
+| Create CRUD Actions Front-End |    H     |     3 hrs      |     1 hrs     |     TBD     |
+| Home/About Page    |    M     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Barter List    |   H     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Barter Detail    |    H     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Confirmation Page    |   L     |   3 hrs      |    3 hrs     |   3 hrs    |
+| User Authentication for Edit & Delete    |    H     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Create Barter Form    |    H     |     3 hrs      |     2 hrs     |    3 hrs    |
+| Edit Barter Form   |    H     |   3 hrs      |     2 hrs     |   2 hrs    |
+| Register Form   |    H     |   3 hrs      |     2 hrs     |   2 hrs    |
+| Login Form   |    H     |   3 hrs      |     2 hrs     |   2 hrs    |
+| Test all front-end CRUD actions    |    H     |   3 hrs      |     3 hrs     |   3 hrs    |
+| Test all register & login front-end actions    |    H     |   2 hrs      |    2 hrs     |   2 hrs    |
+| Style Edit & Create Forms    |    M     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Style Login & Register Forms    |    M     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Style Home/About Page    |    M     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Style Barter List    |   M     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Style Barter Detail    |    M     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Style Confirmation Page    |   L     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Test for Bugs    |   H     |   3 hrs      |    3 hrs     |   3 hrs    |
+| TOTAL               |     -    |     70 hrs      |    70 hrs     |     TBD     |
 
 
 <br>
@@ -132,9 +151,9 @@ src
 
 #### ERD Model
 
-> Use this section to display an image of a computer generated ERD model. You can use draw.io, Lucidchart or another ERD tool.
+- Barter ERD Model
+<img src="https://user-images.githubusercontent.com/43050919/126635769-70b58bbd-c18a-4fef-9212-2060c44add8a.png" />
 
-[ERD Sample](https://app.diagrams.net/?libs=general;uml)
 <br>
 
 ***
@@ -147,7 +166,7 @@ src
 - [ ] Allow user to view any open barters they have requested.
 - [ ] Allow user to view any barters they have opend opened.
 - [ ] Allow user to view any past exchanges.
-- [ ] Allow user to edit their personal information: name, college/university name, and password.
+- [ ] Allow user to add and edit their personal information: name, college/university name, and password.
 
 ***
 
