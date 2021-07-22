@@ -37,6 +37,8 @@ The **Barter Books** MVP is to meet full CRUD on the back-end and front-end for 
 
 #### Wireframes
 
+[All Wireframes](https://www.figma.com/file/8GXDO9ps9ghyWnC795s0JQ/BarterBooks?node-id=18%3A85)
+
 - Mobile Landing
 <img src="https://user-images.githubusercontent.com/43050919/126642220-08bec1ff-e4df-4f13-b48a-ff52fdc1c80c.png" width="400" height="600" />
 
@@ -58,6 +60,8 @@ The **Barter Books** MVP is to meet full CRUD on the back-end and front-end for 
 
 
 #### Component Tree
+
+[Component Tree](https://whimsical.com/barter-books-LswhcS1419S5Jz8HW7pfeQ)
 
 ![Component Tree](https://user-images.githubusercontent.com/43050919/126634979-74313add-cb69-4417-997b-da06423c059e.png)
 
