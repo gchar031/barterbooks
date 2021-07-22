@@ -157,7 +157,7 @@ src
 #### ERD Model
 
 - Barter ERD Model
-<img src="https://user-images.githubusercontent.com/43050919/126635769-70b58bbd-c18a-4fef-9212-2060c44add8a.png" />
+<img src="https://user-images.githubusercontent.com/43050919/126665351-a3d17707-e884-4316-8af0-425af629a075.png" />
 
 <br>
 
