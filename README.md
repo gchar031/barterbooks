@@ -97,6 +97,7 @@ src
 |__ services/
       |__ api-config.js
       |__ barter.js
+      |__ books.js
       |__ auth.js
 |__ containers/
       |__ MainCointainer.jsx
