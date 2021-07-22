@@ -2,21 +2,21 @@
 
 ## Overview
 
-**Barter Books** A web app that will allow college students to trade their books and notes with other college students as a more affordable solution for them to be more prepare for their courses by relieving some of the financial burden. This web app is designed with mobile accessibility first in mind, then desktop and tablet, therefore all the features are legible and functional for most mobile and desktop/tablet devices. Presently, only basic features for bartering are functional, however in the future more features, like the ones in the PVMP section, may be added to this web application. 
+**Barter Books** A web app that will allow college students to trade their books and notes with other college students as a more affordable solution for them to be more prepare for their courses by relieving some of the financial burden. This web app is designed with mobile accessibility first in mind, then desktop and tablet, therefore all the features are legible and functional for most mobile and desktop/tablet devices. Presently, only basic features for bartering books are functional, however in the future more features, like the ones in the PVMP section, may be added to this web application. 
 
 <br>
 
 ## MVP
 
-The **Barter Books** MVP is to meet full CRUD on the back-end and front-end for barters allowing only registered users to have full access to these features. Unregistered users will be able to view all the available barters and can only request an exchange after registering or logging in. 
+The **Barter Books** MVP is to meet full CRUD on the back-end and front-end for books allowing only registered users to have full access to these features. Unregistered users will be able to view all the available books for bartering and can only request an exchange after registering or logging in. 
 
 ### Goals
 
-- Allow all users to view barters that available for exchange.
+- Allow all users to view books that available for exchange.
 - Allow user to register for an account.
-- Allow user to login into their account and edit and delete their barters.
+- Allow user to login into their account and edit and delete their book(s).
 - Allow any registered user to request an exchange.
-- All any registered user to contact barterer for more information.
+- Allow user to sort books by categories.
 - Full CRUD on back-end and front-end.
 
 <br>
@@ -42,20 +42,20 @@ The **Barter Books** MVP is to meet full CRUD on the back-end and front-end for 
 - Mobile Landing
 <img src="https://user-images.githubusercontent.com/43050919/126642220-08bec1ff-e4df-4f13-b48a-ff52fdc1c80c.png" width="400" height="600" />
 
-- Mobile Barter Index
-<img src="https://user-images.githubusercontent.com/43050919/126642267-6d513b03-94ea-438f-869e-2617ad093a3a.png" width="400" height="600"/>
+- Mobile Books Index
+<img src="https://user-images.githubusercontent.com/43050919/126674094-75c53096-627e-4efd-812f-23270e294e50.png" width="400" height="600"/>
 
-- Mobile Barter Detail 
-<img src="https://user-images.githubusercontent.com/43050919/126642295-1c7acb4a-7799-4927-a7ba-04deb7c91171.png" width="400" height="600"/>
+- Mobile Book Detail 
+<img src="https://user-images.githubusercontent.com/43050919/126674175-c5196161-7518-424a-aa13-7d12f108dbb1.png" width="400" height="600"/>
 
-- Mobile Create Barter
-<img src="https://user-images.githubusercontent.com/43050919/126642322-20a36986-98fe-444f-809c-8d88b6440873.png" width="400" height="600"/>
+- Mobile Create Book
+<img src="https://user-images.githubusercontent.com/43050919/126674238-f95ee838-16a4-458e-b3e2-01564a3b889f.png" width="400" height="600"/>
 
-- Desktop Barter Index
-<img src="https://user-images.githubusercontent.com/43050919/126642393-14279ae2-3287-49df-8c9a-15500c3159e6.png" width="900" height="600"/>
+- Desktop Book Index
+<img src="https://user-images.githubusercontent.com/43050919/126674429-ae4b5275-8553-46f0-8105-98a61e6a3c98.png" width="900" height="600"/>
 
-- Tablet Barter Detail 
-<img src="https://user-images.githubusercontent.com/43050919/126642442-67ecb957-2c8d-43da-96e2-f16fd5983739.png" width="900" height="600"/>
+- Tablet Book Detail 
+<img src="https://user-images.githubusercontent.com/43050919/126674468-68b317e0-d77f-4d16-9ccd-3cf96d89f756.png" width="700" height="900"/>
 
 
 
@@ -63,7 +63,7 @@ The **Barter Books** MVP is to meet full CRUD on the back-end and front-end for 
 
 [Component Tree](https://whimsical.com/barter-books-LswhcS1419S5Jz8HW7pfeQ)
 
-![Component Tree](https://user-images.githubusercontent.com/43050919/126634979-74313add-cb69-4417-997b-da06423c059e.png)
+![Component Tree](https://user-images.githubusercontent.com/43050919/126674960-aabb0afc-2f8c-4114-81ab-b764f1d06afd.png)
 
 #### Component Architecture
 
@@ -77,35 +77,35 @@ src
 |__ components/
       |__ Header.jsx
       |__ Footer.jsx
-      |__ Barters.jsx
-      |__ BarterDetail.jsx
-      |__ CreateBarter.jsx
-      |__ EditBarter.jsx
+      |__ Books.jsx
+      |__ BookDetail.jsx
+      |__ CreateBook.jsx
+      |__ EditBook.jsx
       |__ Confirmation.jsx
       |__ Login.jsx
       |__ Register.jsx
       |__ Home.jsx
 |__ screens/
-      |__ Barters.jsx
-      |__ BarterDetail.jsx
-      |__ CreateBarter.jsx
-      |__ EditBarter.jsx
+      |__ Books.jsx
+      |__ BookDetail.jsx
+      |__ CreateBook.jsx
+      |__ EditBook.jsx
       |__ Confirmation.jsx
       |__ Login.jsx
       |__ Register.jsx
       |__ Home.jsx
 |__ services/
       |__ api-config.js
-      |__ barter.js
+      |__ categories.js
       |__ books.js
       |__ auth.js
 |__ containers/
       |__ MainCointainer.jsx
 |__ styles/
-      |__ Barters.css
-      |__ BarterDetail.css
-      |__ CreateBarter.css
-      |__ EditBarter.css
+      |__ Books.css
+      |__ BookDetail.css
+      |__ CreateBook.css
+      |__ EditBook.css
       |__ Confirmation.css
       |__ Login.css
       |__ Register.css
@@ -130,12 +130,13 @@ src
 | Create API-config file & CRUD methods   |    H     |   2 hrs      |     2 hrs     |   2 hrs    |
 | Create CRUD Actions Front-End |    H     |     3 hrs      |     1 hrs     |     TBD     |
 | Home/About Page    |    M     |   3 hrs      |    3 hrs     |   3 hrs    |
-| Barter List    |   H     |   3 hrs      |    3 hrs     |   3 hrs    |
-| Barter Detail    |    H     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Books List    |   H     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Book Categories   |   M     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Book Detail    |    H     |   3 hrs      |    3 hrs     |   3 hrs    |
 | Confirmation Page    |   L     |   3 hrs      |    3 hrs     |   3 hrs    |
 | User Authentication for Edit & Delete    |    H     |   3 hrs      |    3 hrs     |   3 hrs    |
-| Create Barter Form    |    H     |     3 hrs      |     2 hrs     |    3 hrs    |
-| Edit Barter Form   |    H     |   3 hrs      |     2 hrs     |   2 hrs    |
+| Create Book Form    |    H     |     3 hrs      |     2 hrs     |    3 hrs    |
+| Edit Book Form   |    H     |   3 hrs      |     2 hrs     |   2 hrs    |
 | Register Form   |    H     |   3 hrs      |     2 hrs     |   2 hrs    |
 | Login Form   |    H     |   3 hrs      |     2 hrs     |   2 hrs    |
 | Test all front-end CRUD actions    |    H     |   3 hrs      |     3 hrs     |   3 hrs    |
@@ -143,8 +144,8 @@ src
 | Style Edit & Create Forms    |    M     |   3 hrs      |    3 hrs     |   3 hrs    |
 | Style Login & Register Forms    |    M     |   3 hrs      |    3 hrs     |   3 hrs    |
 | Style Home/About Page    |    M     |   3 hrs      |    3 hrs     |   3 hrs    |
-| Style Barter List    |   M     |   3 hrs      |    3 hrs     |   3 hrs    |
-| Style Barter Detail    |    M     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Style Book List    |   M     |   3 hrs      |    3 hrs     |   3 hrs    |
+| Style Book Detail    |    M     |   3 hrs      |    3 hrs     |   3 hrs    |
 | Style Confirmation Page    |   L     |   3 hrs      |    3 hrs     |   3 hrs    |
 | Test for Bugs    |   H     |   3 hrs      |    3 hrs     |   3 hrs    |
 | TOTAL               |     -    |     70 hrs      |    70 hrs     |     TBD     |
@@ -157,21 +158,21 @@ src
 #### ERD Model
 
 - Barter ERD Model
-<img src="https://user-images.githubusercontent.com/43050919/126665351-a3d17707-e884-4316-8af0-425af629a075.png" />
-
+<img src="https://user-images.githubusercontent.com/43050919/126675942-93026fe3-cc57-4350-bcc8-672839d797e8.png" />
 <br>
 
 ***
 
 ## Post-MVP
 
-- [ ] Sort barters by college/university name.
+- [ ] Sort books by college/university name.
 - [ ] Change password feature.
-- [ ] Add pagination to barter index page.
-- [ ] Allow user to view any open barters they have requested.
-- [ ] Allow user to view any barters they have opened and approved.
+- [ ] Add pagination to books index page.
+- [ ] Allow user to view any open books they have requested.
+- [ ] Allow user to view any books they have opened and approved.
 - [ ] Allow user to view any past exchanges.
 - [ ] Allow user to add and edit their personal information: name, college/university name, and password.
+- [ ] All any registered user to contact the barterer for more information.
 
 ***
 
