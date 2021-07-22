@@ -1,42 +1,35 @@
-# BarterBooks
-# PROJECT 4 README <!-- omit in toc -->
+# Barter Books
 
 ## Overview
 
-_**Barter Books** A web app that will allow college students to trade their books and notes with other college students as a more affordable solution for them to be more prepare for their courses by relieving some of the financial burden._
-
+**Barter Books** A web app that will allow college students to trade their books and notes with other college students as a more affordable solution for them to be more prepare for their courses by relieving some of the financial burden. This web app is designed with mobile accessibilty first in mind then desktop and tablet, therefore all the features are legible and functional for most mobile and desktop/tablet devices. Presently, only basic features for bartering are functional, however in the future more features, like the ones in the PVMP section, may be added to this web application. 
 
 <br>
 
 ## MVP
 
-> The Minimum Viable Product should be a well-planned, easily-communicated product, ensuring that the client's deliverable will be achievable and meet specifications within the time frame estimated.
-
-_The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus dapibus fermentum risus vitae bibendum. Integer vel ipsum mollis odio sollicitudin ornare eu vel ex. In quis fringilla velit, ac maximus quam. Etiam eget placerat neque. Aenean faucibus sem non nisi lobortis ullamcorper._
-
-<br>
+The **Barter Books** MVP is to meet full CRUD on the back-end and front-end for barters allowing only registered users to have full access to these features. Unregistered users will be able to view all the available barters and can only request an exchange after registering or loggin in. 
 
 ### Goals
 
-- _Lorem ipsum, dolor sit amet,_
-- _consectetur adipiscing elit._
-- _Phasellus dapibus fermentum risus vitae bibendum._
-- _Integer vel ipsum mollis odio sollicitudin ornare eu vel ex._
-- _etc._
+- Allow all users to view barters that available for exchange.
+- Allow user to register for an account.
+- Allow user to login into their account and edit and delete their barters.
+- Allow any registered user to request an exchange.
+- All any registered user to contact barterer for more information.
+- Full CRUD on back-end and front-end.
 
 <br>
 
 ### Libraries and Dependencies
 
-> Use this section to list all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
+>List of all supporting libraries and dependencies, and their role in the project. Below is an example - this needs to be replaced!
 
 |     Library      | Description                                |
 | :--------------: | :----------------------------------------- |
-|      React       | _Lorem ipsum dolor sit amet, consectetur._ |
-|   React Router   | _Lorem ipsum dolor sit amet, consectetur._ |
-| React SemanticUI | _Lorem ipsum dolor sit amet, consectetur._ |
-|     Express      | _Lorem ipsum dolor sit amet, consectetur._ |
-|  Express Router  | _Lorem ipsum dolor sit amet, consectetur._ |
+|      React       | _Axios_ |
+|   React Router   | _React-Router-DOM_ |
+| Rails | _jwt,rack-cors, bcrypt, pry-rails_ |
 
 <br>
 
@@ -44,53 +37,81 @@ _The **Project Title** MVP lorem ipsum dolor sit amet, consectetur adipiscing el
 
 #### Wireframes
 
-> Use the Wireframes section to display desktop, tablet and mobile views. No hand-drawn wireframes. Use a tool like wireframe.cc, Whimsical or AdobeXD
+![Dummy Link](url)
+
+- Mobile Landing
 
 ![Dummy Link](url)
 
-- Desktop Landing
+- Mobile Barter Index
 
 ![Dummy Link](url)
 
-- Desktop Hero
+- Mobile Barter Detail 
 
 ![Dummy Link](url)
 
-- Resource Index
+- Mobile Create Barter
+
+![Desktop Barter Index](https://www.figma.com/file/8GXDO9ps9ghyWnC795s0JQ/BarterBooks?node-id=1%3A3)
+
+- Desktop Barter Index
 
 ![Dummy Link](url)
 
-- Resource Show
-
-![Dummy Link](url)
-
-- Tablet Resource Index
-
-![Dummy Link](url)
-
-- Mobile Resource Index
+- Tablet Barter Detail 
 
 #### Component Tree
 
-> Use this section to display the structure of how your React components are being rendered. This should show the parent to child relation between you components. In other words, show which components are rendering the other components. Include a link to your component tree
+![Component Tree](https://user-images.githubusercontent.com/43050919/126587410-01d3f967-f7d6-4df2-ab58-b54e9835f95c.png)
 
-[Component Tree Sample](https://gist.git.generalassemb.ly/davidtwhitlatch/414107e2560ae0bb65e233570f2fe056#file-component-tree-png)
 
 #### Component Architecture
 
-> Use this section to define your React components and the data architecture of your app. This should be a reflection of how you expect your directory/file tree to look like. 
+> The component architecture for the app will be like so:
 
 ``` structure
 
 src
 |__ assets/
-      |__ fonts
-      |__ graphics
-      |__ images
-      |__ mockups
+      |__ images/
 |__ components/
       |__ Header.jsx
+      |__ Footer.jsx
+      |__ Barters.jsx
+      |__ BarterDetail.jsx
+      |__ CreateBarter.jsx
+      |__ EditBarter.jsx
+      |__ Confirmation.jsx
+      |__ Login.jsx
+      |__ Register.jsx
+      |__ Home.jsx
+|__ screens/
+      |__ Barters.jsx
+      |__ BarterDetail.jsx
+      |__ CreateBarter.jsx
+      |__ EditBarter.jsx
+      |__ Confirmation.jsx
+      |__ Login.jsx
+      |__ Register.jsx
+      |__ Home.jsx
 |__ services/
+      |__ api-config.js
+      |__ barter.js
+      |__ auth.js
+|__ containers/
+      |__ MainCointainer.jsx
+|__ styles/
+      |__ Barters.css
+      |__ BarterDetail.css
+      |__ CreateBarter.css
+      |__ EditBarter.css
+      |__ Confirmation.css
+      |__ Login.css
+      |__ Register.css
+      |__ Home.css
+      |__ Header.css
+      |__ Footer.css
 
 ```
 
@@ -104,7 +125,6 @@ src
 | Create CRUD Actions |    H     |     3 hrs      |     1 hrs     |     TBD     |
 | TOTAL               |          |     6 hrs      |     3 hrs     |     TBD     |
 
-> _Why is this necessary? Time frames are key to the development cycle. You have limited time to code your app, and your estimates can then be used to evaluate possibilities of your MVP and post-MVP based on time needed. It's best you assume an additional hour for each component, as well as a few hours added to the total time, to play it safe._
 
 <br>
 
@@ -121,7 +141,13 @@ src
 
 ## Post-MVP
 
-> Use this section to document ideas you've had that would be fun (or necessary) for your Post-MVP. This will be helpful when you return to your project after graduation!
+- [ ] Sort barters by college/university name.
+- [ ] Change password feature.
+- [ ] Add pagination to barter index page.
+- [ ] Allow user to view any open barters they have requested.
+- [ ] Allow user to view any barters they have opend opened.
+- [ ] Allow user to view any past exchanges.
+- [ ] Allow user to edit their personal information: name, college/university name, and password.
 
 ***
 
