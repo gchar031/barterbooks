@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import fillerImg from "../assets/images/fillerimg.jpeg";
-
+import { verifyStudent } from "../services/auth";
 export default function CreateBook(props) {
-  const { handleCreate, categories, currentStudent } = props;
+  const { handleCreate, categories} = props;
+  const [currentStudent, setCurrentS] = useState(null);
 
-  // console.log(categories);
+    useEffect(() => {
+      const handleVerify = async () => {
+        const studentData = await verifyStudent();
+        setCurrentS(studentData);
+      };
+      handleVerify();
+    }, []);
+  
+  console.log("My student", currentStudent);
   const [bookData, setBookData] = useState({
     title: "",
     author: "",
@@ -19,12 +28,10 @@ export default function CreateBook(props) {
 
   function handleChange(e) {
     const { name, value } = e.target;
-    console.log(name, value);
     setBookData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-    console.log("After", name, value);
   }
   return (
     <form id="createBook" onSubmit={handleCreate}>
@@ -95,9 +102,9 @@ export default function CreateBook(props) {
       <br />
       <label htmlFor="category">Category:</label>
       <select name="category">
-        {/* {categories.map((category) => {
-          return <option value={category.id}>{category.name}</option>;
-        })} */}
+        {categories.map((category) => {
+          return <option value={category.id} key={category.id}>{category.name}</option>;
+        })}
       </select>
       <br />
       <button type="submit">Submit</button>

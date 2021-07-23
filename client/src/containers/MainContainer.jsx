@@ -14,9 +14,9 @@ export default function MainContainer(props) {
   const { currentStudent } = props;
   const [bookList, setBookList] = useState([])
   const [book, setBook] = useState({})
-  const [catergories, setCategories] = useState([])
+  const [categories, setCategories] = useState([])
   const history = useHistory()
-  console.log(currentStudent);
+
   useEffect(() => {
     const fetchBooks = async () => {
       const response = await getAllBooks()
@@ -36,7 +36,7 @@ export default function MainContainer(props) {
       ...prevState,
       newBook
     ])
-    history.push(`/books/${newBook.id}`)
+    history.push(`/books`)
   }
   
   async function handleUpdate(studentID, bookID, data) {
@@ -57,15 +57,13 @@ export default function MainContainer(props) {
     setBook(found)
   }
 
-  
-  console.log("My categories", catergories)
   return (
     <Switch>
       <Route path="/edit/:id">
         <EditBook
           handleUpdate={handleUpdate}
           handleDelete={handleDelete}
-          catergories={catergories}
+          categories={categories}
           currentStudent={currentStudent}
         />
       </Route>
@@ -75,7 +73,7 @@ export default function MainContainer(props) {
       <Route path="/create">
         <CreateBook
           handleCreate={handleCreate}
-          catergories={catergories}
+          categories={categories}
           currentStudent={currentStudent}
         />
       </Route>
