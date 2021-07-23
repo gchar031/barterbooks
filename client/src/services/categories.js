@@ -1,6 +1,6 @@
 import api from "./api-config";
 
-export const getAllBooks = async () => {
-  const resp = await api.get("/books");
+export const getAllCategories = async () => {
+  const resp = await api.get("/categories");
   return resp.data;
 };

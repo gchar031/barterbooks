@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   resources :students, only: :create do
     resources :books, only: %i[create update destroy]
   end
-  resources :books, only: :index
+  resources :books, only: %i[index show]
   resources :categories, only: :index
 end
