@@ -5,9 +5,9 @@ export default function Register(props) {
     username: "",
     password: "",
     email: "",
-    college: "",
+    college_name: "",
   });
-  const { username, password, college, email } = formData;
+  const { username, password, college_name, email } = formData;
   const { handleRegister } = props;
 
   function handleChange(e) {
@@ -25,7 +25,8 @@ export default function Register(props) {
       onSubmit={(e) => {
         e.preventDefault();
         handleRegister(formData);
-      }} id="registerForm"
+      }}
+      id="registerForm"
     >
       <label htmlFor="username"> Username:</label>
       <input
@@ -58,10 +59,10 @@ export default function Register(props) {
       <label htmlFor="college_name"> College/University Name: </label>
       <input
         type="text"
-        id="collge"
+        id="college"
         name="college_name"
         placeholder="ABC College"
-        value={college}
+        value={college_name}
         onChange={handleChange}
       />
       <br />

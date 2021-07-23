@@ -5,6 +5,7 @@ import Register from "./screens/Register";
 import Login from "./screens/Login";
 import Layout from "./components/Layout";
 import MainContainer from "./containers/MainContainer";
+
 import {
   registerStudent,
   loginStudent,
@@ -52,7 +53,9 @@ function App() {
           <Route path="/login">
             <Login handleLogin={handleLogin} />
           </Route>
-          <Route path="/" component={MainContainer} />
+          <Route path="/">
+            <MainContainer currentStudent={currentStudent} />
+          </Route>
         </Switch>
       </Layout>
     </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 export default function Header(props) {
   const { currentStudent, handleLogout } = props;
-  
+
   function checkLogin() {
     return currentStudent ? (
       <div>
@@ -29,7 +29,7 @@ export default function Header(props) {
         <Link to="/books">
           <li>Books</li>
         </Link>
-        <Link to="/books/create">
+        <Link to="/create">
           <li>Create Book</li>
         </Link>
       </ul>

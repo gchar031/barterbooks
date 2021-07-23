@@ -16,7 +16,7 @@ export default function MainContainer(props) {
   const [book, setBook] = useState({})
   const [catergories, setCategories] = useState([])
   const history = useHistory()
-
+  console.log(currentStudent);
   useEffect(() => {
     const fetchBooks = async () => {
       const response = await getAllBooks()
@@ -57,11 +57,8 @@ export default function MainContainer(props) {
     setBook(found)
   }
 
-  async function categoriesList() {
-    const list = await getAllCategories()
-    setCategories(list)
-  }
-
+  
+  console.log("My categories", catergories)
   return (
     <Switch>
       <Route path="/edit/:id">
