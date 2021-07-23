@@ -3,19 +3,19 @@ class BooksController < ApplicationController
   before_action :authorize_request, only: %i[create update destroy]
 
   def index
-    @books = Books.all
+    @books = Book.all
     render json: @books
   end
 
   def show
-    render json: @book, include: :categories
+    render json: @book, include: %i[category student]
   end
 
   def create
     @new_book = Book.new(book_params)
 
     if @new_book.save
-      render json: @new_book
+      render json: @new_book, status: :created
     else
       render json: @new_book.errors, status: :unprocessable_entity
     end
@@ -30,10 +30,14 @@ class BooksController < ApplicationController
   end
 
   def add_category
-    @category = Category.find(params[:book_id])
+    @category = Category.find(params[:name])
     # @food.flavors << @flavor
+    @book.catergory << @category
+    render json: @book, include: :category
+  end
 
-    render json: @book, include: :categories
+  def destroy
+    @book.destroy
   end
 
   private
@@ -43,6 +47,6 @@ class BooksController < ApplicationController
   end
 
   def book_params
-    params.require(:book).permit(:title, :author, :edition, :year)
+    params.require(:book).permit(:title, :author, :edition, :year, :exchange_item, :description, :img_url, :student_id, :category_id)
   end
 end

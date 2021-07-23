@@ -1,17 +1,18 @@
 class StudentsController < ApplicationController
-  
+
   # POST /students
   def create
     @student = Student.new(student_params)
 
     if @student.save
-      @token = encode({ id: @user.id })
+      @token = encode({ id: @student.id })
+      # will not send back password
       render json: {
-        user: @user.attributes.except('password_digest'),
-        token: @token
+        token: @token,
+        student: @student.attributes.except('password_digest')
       }, status: :created
     else
-      render json: @user.errors, status: :unprocessable_entity
+      render json: @student.errors, status: :unprocessable_entity
     end
   end
 
@@ -19,6 +20,6 @@ class StudentsController < ApplicationController
 
   # Only allows a list of trusted parameters through.
   def student_params
-    params.require(:student).permit(:username, :email, :password)
+    params.require(:student).permit(:username, :email, :password, :college_name)
   end
 end
