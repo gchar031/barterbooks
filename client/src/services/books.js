@@ -5,20 +5,20 @@ export const getAllBooks = async () => {
   return resp.data;
 };
 
-export const getBook = async (studntID, bookId) => {
-  const resp = await api.get("/books");
+export const getBook = async (id) => {
+  const resp = await api.get(`/books/${id}`);
   return resp.data;
 };
 
-export const createBook = async (studntID, bookId,formData) => {
-  const resp = await api.get(`/students/${studntID}/books${bookId}`, {
+export const createBook = async (studntID,formData) => {
+  const resp = await api.post(`/students/${studntID}/books`, {
     book: formData,
   });
   return resp.data;
 };
 
 export const updateBook = async (studntID, bookId, formData) => {
-  const resp = await api.get(`/students/${studntID}/books${bookId}`, { book: formData});
+  const resp = await api.put(`/students/${studntID}/books${bookId}`, { book: formData});
   return resp.data;
 };
 
