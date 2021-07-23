@@ -4,10 +4,10 @@ export default function Register(props) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
-    college_name: "",
     email: "",
+    college: "",
   });
-  const { username, password, college_name, email } = formData;
+  const { username, password, college, email } = formData;
   const { handleRegister } = props;
 
   function handleChange(e) {
@@ -17,6 +17,7 @@ export default function Register(props) {
       ...prevState,
       [name]: value,
     }));
+    console.log("After", name, value);
   }
 
   return (
@@ -26,19 +27,16 @@ export default function Register(props) {
         handleRegister(formData);
       }}
     >
-      <label htmlFor="username">
-        {" "}
-        Username:
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleChange}
-          required
-        />
-      </label>
+      <label htmlFor="username"> Username:</label>
+      <input
+        type="text"
+        name="username"
+        value={username}
+        onChange={handleChange}
+        required
+      />
       <br />
-      <label htmlFor="passord">Password:</label>
+      <label htmlFor="passord"> Password: </label>
       <input
         type="password"
         name="password"
@@ -47,22 +45,25 @@ export default function Register(props) {
         required
       />
       <br />
-      <label htmlFor="email"> Email:</label>
+      <label htmlFor="email"> Email: </label>
       <input
         type="email"
         name="email"
+        placeholder="email@college.edu"
         value={email}
         onChange={handleChange}
         required
       />
-      <label htmlFor="college_name">College/University Name:</label>
+      {/* bug: input text for college will not appear */}
+      <label htmlFor="college_name"> College/University Name: </label>
       <input
         type="text"
-        name="collge_name"
-        value={college_name}
+        id="collge"
+        name="college_name"
+        placeholder="ABC College"
+        value={college}
         onChange={handleChange}
       />
-
       <br />
       <button type="submit">Register</button>
     </form>

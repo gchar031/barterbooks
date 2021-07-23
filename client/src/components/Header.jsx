@@ -23,8 +23,18 @@ export default function Header(props) {
   }
   return (
     <nav>
-      <h1>Barter Books</h1>
-      {checkLogin()}
+      <Link to="/">
+        <h1>Barter Books</h1>
+      </Link>
+      <ul className="menu">
+        <Link to="/books">
+          <li>Books</li>
+        </Link>
+        <Link to="/books/create">
+          <li>Create Book</li>
+        </Link>
+      </ul>
+      <div className="loginRegister">{checkLogin()}</div>
     </nav>
   );
 }

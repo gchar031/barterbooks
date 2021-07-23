@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
   resources :students, only: :create do
-    resources :books
+    resources :books, only: %i[create update destroy]
   end
+  resources :books, only: :index
+  resources :categories, only: :index
 end
