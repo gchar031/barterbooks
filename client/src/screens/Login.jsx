@@ -1,19 +1,19 @@
-import { useState } from "react"
+import { useState } from "react";
 
 export default function Login(props) {
-  const {handleLogin} = props
+  const { handleLogin } = props;
   const [formData, setFormData] = useState({
-    username: '',
-    password: ''
-  })
-  const { username, password } = formData
+    username: "",
+    password: "",
+  });
+  const { username, password } = formData;
 
   function handleChange(e) {
-    const { name, value } = e.target
+    const { name, value } = e.target;
     setFormData((prevState) => ({
       ...prevState,
-      [name] : value,
-    }))
+      [name]: value,
+    }));
   }
 
   return (
@@ -25,12 +25,13 @@ export default function Login(props) {
       }}
     >
       <label>
-        <input type="text" name="username" value={username} required/>
+        <input type="text" name="username" value={username} required />
       </label>
       <br />
       <label>
-        <input type="password" name="password" value={password} required/>
+        <input type="password" name="password" value={password} required />
       </label>
+      <button type="submit">Login</button>
     </form>
   );
 }
