@@ -18,19 +18,31 @@ export default function Login(props) {
 
   return (
     <form
-      onChange={handleChange}
       onSubmit={(e) => {
         e.preventDefault();
         handleLogin(formData);
       }}
     >
       <label>
-        <input type="text" name="username" value={username} required />
+        <input
+          type="text"
+          name="username"
+          value={username}
+          onChange={handleChange}
+          required
+        />
       </label>
       <br />
       <label>
-        <input type="password" name="password" value={password} required />
+        <input
+          type="password"
+          name="password"
+          value={password}
+          onChange={handleChange}
+          required
+        />
       </label>
+      <br />
       <button type="submit">Login</button>
     </form>
   );

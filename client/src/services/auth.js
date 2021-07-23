@@ -1,14 +1,14 @@
-import api from './api-config'
+import api from "./api-config";
 
 export const loginStudent = async (loginData) => {
-  const resp = await api.post('/auth/login', { authentication: loginData })
-  localStorage.setItem('authToken', resp.data.token)
-  api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`
-  return resp.data.student
-}
+  const resp = await api.post("/auth/login", { authentication: loginData });
+  localStorage.setItem("authToken", resp.data.token);
+  api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
+  return resp.data.student;
+};
 
 export const registerStudent = async (registerData) => {
-  const resp = await api.post("/student", { student: registerData });
+  const resp = await api.post("/students", { student: registerData });
   localStorage.setItem("authToken", resp.data.token);
   api.defaults.headers.common.authorization = `Bearer ${resp.data.token}`;
   return resp.data.student;
