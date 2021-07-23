@@ -7,6 +7,7 @@ export default function Login(props) {
     password: ''
   })
   const { username, password } = formData
+
   function handleChange(e) {
     const { name, value } = e.target
     setFormData((prevState) => ({
@@ -14,6 +15,7 @@ export default function Login(props) {
       [name] : value,
     }))
   }
+
   return (
     <form
       onChange={handleChange}
@@ -23,11 +25,11 @@ export default function Login(props) {
       }}
     >
       <label>
-        <input type="text" name="username" value={username} />
+        <input type="text" name="username" value={username} required/>
       </label>
       <br />
       <label>
-        <input type="password" name="password" value={password} />
+        <input type="password" name="password" value={password} required/>
       </label>
     </form>
   );
