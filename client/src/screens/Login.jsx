@@ -21,7 +21,7 @@ export default function Login(props) {
       onSubmit={(e) => {
         e.preventDefault();
         handleLogin(formData);
-      }}
+      }} id="loginForm"
     >
       <label>
         <input
