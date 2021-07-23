@@ -10,7 +10,8 @@ import BookDetail from '../screens/BookDetail'
 import Books from "../screens/Books";
 import Home from '../screens/Home'
 
-export default function MainContainer() {
+export default function MainContainer(props) {
+  const { currentStudent } = props;
   const [bookList, setBookList] = useState([])
   const [book, setBook] = useState({})
   const [catergories, setCategories] = useState([])
@@ -60,7 +61,7 @@ export default function MainContainer() {
     const list = await getAllCategories()
     setCategories(list)
   }
-  
+
   return (
     <Switch>
       <Route path="/edit/:id">
@@ -68,16 +69,21 @@ export default function MainContainer() {
           handleUpdate={handleUpdate}
           handleDelete={handleDelete}
           catergories={catergories}
+          currentStudent={currentStudent}
         />
       </Route>
       <Route path="/books/:id">
         <BookDetail handleDetails={handleDetails} />
       </Route>
       <Route path="/create">
-        <CreateBook handleCreate={handleCreate} catergories={catergories} />
+        <CreateBook
+          handleCreate={handleCreate}
+          catergories={catergories}
+          currentStudent={currentStudent}
+        />
       </Route>
       <Route path="/books">
-        <Books bookList={bookList} />
+        <Books bookList={bookList} currentStudent={currentStudent} />
       </Route>
       <Route path="/">
         <Home />

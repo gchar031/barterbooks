@@ -2,9 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 export default function Header(props) {
   const { currentStudent, handleLogout } = props;
-  console.log(currentStudent);
+  
   function checkLogin() {
-    console.log(currentStudent);
     return currentStudent ? (
       <div>
         <h3> Hello, {currentStudent.username} </h3>
