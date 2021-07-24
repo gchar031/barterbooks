@@ -28,10 +28,10 @@ export default function CreateBook(props) {
       id="createBook"
       onSubmit={(e) => {
         e.preventDefault();
-        handleCreate(currentStudent.id,bookData);
+        handleCreate(currentStudent.id, bookData);
       }}
     >
-      <label htmlFor="title">Title:</label>
+      <label htmlFor="title">Title: </label>
       <input
         type="text"
         name="title"
@@ -40,7 +40,7 @@ export default function CreateBook(props) {
         onChange={handleChange}
       />
       <br />
-      <label htmlFor="author">Author:</label>
+      <label htmlFor="author">Author: </label>
       <input
         type="text"
         name="author"
@@ -49,53 +49,33 @@ export default function CreateBook(props) {
         onChange={handleChange}
       />
       <br />
-      <label htmlFor="edition">Editon:</label>
-      <input
-        type="number"
-        name="edition"
-        value={bookData.edition}
-        required
-        onChange={handleChange}
-      />
+      <label htmlFor="year">
+        Year:
+        <input
+          type="number"
+          name="year"
+          value={bookData.year}
+          min="1700"
+          max="2099"
+          step="1"
+          required
+          onChange={handleChange}
+        />
+      </label>
+      <label htmlFor="edition">
+        Editon:
+        <input
+          type="number"
+          name="edition"
+          value={bookData.edition}
+          min="0"
+          max="100"
+          required
+          onChange={handleChange}
+        />{" "}
+      </label>
       <br />
-      <label htmlFor="year">Year:</label>
-      <input
-        type="number"
-        name="year"
-        value={bookData.year}
-        minLength="4"
-        maxLength="4"
-        required
-        onChange={handleChange}
-      />
-      <br />
-      <label htmlFor="description">Description:</label>
-      <input
-        type="text"
-        name="description"
-        value={bookData.description}
-        required
-        onChange={handleChange}
-      />
-      <br />
-      <label htmlFor="img_url">Image URL:</label>
-      <input
-        type="text"
-        name="img_url"
-        value={bookData.img_url}
-        onChange={handleChange}
-      />
-      <br />
-      <label htmlFor="exchange_item">Exchange Item:</label>
-      <input
-        type="text"
-        name="exchange_item"
-        value={bookData.exchange_item}
-        placeholder="Item that you wish to exchange for."
-        onChange={handleChange}
-      />
-      <br />
-      <label htmlFor="category">Category:</label>
+      <label htmlFor="category">Category: </label>
       <select name="category">
         {categories.map((category) => {
           return (
@@ -105,6 +85,37 @@ export default function CreateBook(props) {
           );
         })}
       </select>
+      <br />
+      <label htmlFor="img_url">Image URL: </label>
+      <input
+        type="text"
+        name="img_url"
+        value={bookData.img_url}
+        onChange={handleChange}
+      />
+      <br />
+      <label htmlFor="exchange_item">Exchange Item: </label>
+      <input
+        type="text"
+        name="exchange_item"
+        value={bookData.exchange_item}
+        placeholder="Item that you wish to exchange for."
+        onChange={handleChange}
+        required
+      />
+      <br />
+      <label htmlFor="description">Description: </label>
+      <br />
+      <br />
+      <textarea
+        name="description"
+        value={bookData.description}
+        required
+        onChange={handleChange}
+        rows="5"
+        cols="20"
+      ></textarea>
+      <br />
       <br />
       <button type="submit">Submit</button>
     </form>

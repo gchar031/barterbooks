@@ -39,11 +39,9 @@ export default function MainContainer() {
 
 
   async function handleCreate(studentID, data) {
-    console.log('Before', data.img_url)
-    if (data.img_url === "") {
-      data.img_url = {fillerImg}
+    if (data.img_url === "" || data.img_url === null) {
+      data.img_url = fillerImg ;
     }
-    console.log("After", data.img_url);
     const newBook = await createBook(studentID, data)
     setBookList((prevState) => [
       ...prevState,

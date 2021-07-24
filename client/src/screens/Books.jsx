@@ -1,8 +1,10 @@
 import React from 'react'
+import fillerImg from "../assets/images/fillerimg.jpeg";
 
 export default function Books(props) {
   const { bookList} = props;
   console.log(bookList);
+  console.log(fillerImg, typeof fillerImg)
   return (
     <div className="booksList" key={1}>
       {bookList.map(book => {

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_22_194304) do
+ActiveRecord::Schema.define(version: 2021_07_24_025325) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,11 +23,12 @@ ActiveRecord::Schema.define(version: 2021_07_22_194304) do
     t.string "description"
     t.string "img_url"
     t.string "exchange_item"
-    t.integer "req_counter"
+    t.integer "req_counter", default: 0
     t.bigint "student_id", null: false
     t.bigint "category_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "exchange_counter", default: 0
     t.index ["category_id"], name: "index_books_on_category_id"
     t.index ["student_id"], name: "index_books_on_student_id"
   end
