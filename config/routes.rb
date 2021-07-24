@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # for authentication
   post '/auth/login', to: 'authentication#login'
   get '/auth/verify', to: 'authentication#verify'
-  resources :students, only: :create do
+  resources :students, only: %i[create index] do
     resources :books, only: %i[create update destroy]
   end
   resources :books, only: %i[index show]

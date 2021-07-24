@@ -1,5 +1,10 @@
 class StudentsController < ApplicationController
 
+  def index
+    @students = Student.all
+    render json: @students
+  end
+  
   # POST /students
   def create
     @student = Student.new(student_params)
