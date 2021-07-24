@@ -39,18 +39,20 @@ export default function MainContainer() {
 
 
   async function handleCreate(studentID, data) {
+    // to have default value for images
     if (data.img_url === "" || data.img_url === null) {
-      data.img_url = fillerImg ;
+      data.img_url = fillerImg;
     }
-    const newBook = await createBook(studentID, data)
-    setBookList((prevState) => [
-      ...prevState,
-      newBook
-    ])
-    history.push(`/books`)
+    const newBook = await createBook(studentID, data);
+    setBookList((prevState) => [...prevState, newBook]);
+    history.push(`/books`);
   }
   
   async function handleUpdate(studentID, bookID, data) {
+    // to have default value for images
+    if (data.img_url === "" || data.img_url === null) {
+      data.img_url = fillerImg;
+    }
     const updatedBook = await updateBook(studentID, bookID, data)
     setBookList((prevState) => prevState.map(book => {
       return book.id === Number(updatedBook.id) ? updatedBook : book
@@ -76,6 +78,7 @@ export default function MainContainer() {
           handleUpdate={handleUpdate}
           handleDelete={handleDelete}
           categories={categories}
+          bookList={bookList}
           currentStudent={currentStudent}
         />
       </Route>
