@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { getBook } from "../services/books";
 
 export default function BookDetail(props) {
-  const { students, currentStudent } = props;
+  const { students, categories, currentStudent } = props;
   const { id } = useParams();
   const [book, setBook] = useState({});
 
@@ -18,7 +18,8 @@ export default function BookDetail(props) {
   
   const postedDate = new Date(book.created_at).toLocaleDateString();
   const student = students.find((student) => student.id === book.student_id);
-
+  const category = categories.find((catg) => catg.id === book.category_id);
+  
   return (
     <div className="bookDetails">
       <h3>{book.title}</h3>
@@ -38,7 +39,10 @@ export default function BookDetail(props) {
           readonly
           value={book.description}
         />
+
         <br />
+        {category ? <p>Category: {category.name}</p> : <p>Category:  N/A </p>}
+
         <p>Exchange Item: {book.exchange_item}</p>
         <p>Exchange Counter: {book.exchange_counter}</p>
         <p>Request Counter: {book.req_counter}</p>

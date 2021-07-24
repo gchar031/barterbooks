@@ -64,6 +64,7 @@ export default function MainContainer() {
     if (data.img_url === "" || data.img_url === null) {
       data.img_url = fillerImg;
     }
+    console.log(data.id, bookID, data)
     const updatedBook = await updateBook(studentID, bookID, data);
     setBookList((prevState) =>
       prevState.map((book) => {
@@ -90,7 +91,11 @@ export default function MainContainer() {
         />
       </Route>
       <Route path="/books/:id">
-        <BookDetail students={students} currentStudent={currentStudent} />
+        <BookDetail
+          students={students}
+          currentStudent={currentStudent}
+          categories={categories}
+        />
       </Route>
       <Route path="/books/confirmation">
         <Confirmation bookList={bookList} currentStudent={currentStudent} />

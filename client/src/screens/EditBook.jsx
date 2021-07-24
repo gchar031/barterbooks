@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 
 export default function EditBook(props) {
-  const { handleUpdate, handleDelete,  categories, currentStudent, bookList } = props;
+  const { handleUpdate, handleDelete,  categories, bookList } = props;
   const { id } = useParams()
-
+  // console.log(id)
   const [bookData, setBookData] = useState({
     title: "",
     author: "",
@@ -13,7 +13,7 @@ export default function EditBook(props) {
     description: "",
     img_url: "",
     exchange_item: "",
-    student_id: currentStudent.id,
+    student_id: 0,
     category_id: 1,
   });
 
@@ -44,12 +44,13 @@ export default function EditBook(props) {
       [name]: value,
     }));
   }
+
   return (
     <form
       id="createBook"
       onSubmit={(e) => {
         e.preventDefault();
-        handleUpdate(bookData.student_id, bookData.id, bookData);
+        handleUpdate(bookData.student_id, id, bookData);
       }}
     >
       <label htmlFor="title">Title: </label>
@@ -139,7 +140,7 @@ export default function EditBook(props) {
       <br />
       <br />
       <button type="submit">Update</button>
-      <button type="button" onClick={handleDelete()}>Delete</button>
+      <button type="button" onClick={handleDelete}>Delete</button>
     </form>
   );
 }

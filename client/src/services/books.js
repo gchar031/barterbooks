@@ -19,7 +19,7 @@ export const createBook = async (studntID,formData) => {
 };
 
 export const updateBook = async (studntID, bookId, formData) => {
-  const resp = await api.put(`/students/${studntID}/books${bookId}`, { book: formData});
+  const resp = await api.put(`/students/${studntID}/books/${bookId}`, { book: formData});
   return resp.data;
 };
 
