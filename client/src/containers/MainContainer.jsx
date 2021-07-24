@@ -4,6 +4,7 @@ import fillerImg from "../assets/images/fillerimg.jpeg";
 
 import { getAllBooks, getBook, createBook, updateBook, deleteBook} from '../services/books'
 import { getAllCategories } from '../services/categories'
+import { getAllStudents } from "../services/students";
 import { verifyStudent } from "../services/auth";
 
 import CreateBook from "../screens/CreateBook"
@@ -17,6 +18,7 @@ export default function MainContainer() {
   const [bookList, setBookList] = useState([])
   const [book, setBook] = useState({})
   const [categories, setCategories] = useState([])
+  const [students, setStudents] = useState([]);
   const history = useHistory()
   
   useEffect(() => {
@@ -28,6 +30,10 @@ export default function MainContainer() {
       const response = await getAllCategories()
       setCategories(response)
     }
+    const fetchStudents = async () => {
+      const response = await getAllStudents();
+      setStudents(response);
+    };
     const handleVerify = async () => {
       const studentData = await verifyStudent();
       setCurrentS(studentData);
@@ -35,6 +41,7 @@ export default function MainContainer() {
     handleVerify();
     fetchBooks()
     fetchCategories()
+    fetchStudents()
   }, [])
 
 
@@ -93,7 +100,7 @@ export default function MainContainer() {
         />
       </Route>
       <Route path="/books">
-        <Books bookList={bookList} currentStudent={currentStudent} />
+        <Books bookList={bookList} students={students} />
       </Route>
       <Route path="/">
         <Home />
