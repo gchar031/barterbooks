@@ -15,30 +15,35 @@ export default function BookDetail(props) {
     handleDetails(id);
   }, [id]);
 
-  console.log("2", book, book.created_at);
-  // const postedDate = new Date(book.created_at);
-  // // const postedDate = "";
-  // console.log(postedDate);
-  const date1 = new Date("2021-07-24T02:51:53.964Z");
-  // Sun Dec 17 1995 03:24:00 GMT..
-
-  console.log(date1);
+  
+  const postedDate = new Date(book.created_at).toLocaleDateString();
   const student = students.find((student) => student.id === book.student_id);
 
   return (
     <div className="bookDetails">
       <h3>{book.title}</h3>
+      <img src={book.img_url} alt={book.title} />
+      <hr id="detail_divider" />
       <section className="details">
         <p>Author: {book.author}</p>
         <p>
           Edition, Year: {book.edition}, {book.year}
         </p>
-        <p>Description: {book.description}</p>
+        <label>Description:</label>
+        <br />
+        <textarea
+          id="descDetail"
+          rows="5"
+          cols="15"
+          readonly
+          value={book.description}
+        />
+        <br />
         <p>Exchange Item: {book.exchange_item}</p>
         <p>Exchange Counter: {book.exchange_counter}</p>
         <p>Request Counter: {book.req_counter}</p>
         {student ? <p>Barterer: {student.username}</p> : <p>Barterer: N/A </p>}
-        {/* <p>Date Posted:{postedDate}</p> */}
+        <p>Date Posted: {postedDate}</p>
       </section>
       {currentStudent === null ? (
         <div className="detailsBtns">
