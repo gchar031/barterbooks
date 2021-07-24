@@ -17,11 +17,11 @@ export default function Login(props) {
   }
 
   return (
-    <form
+    <form id="loginForm"
       onSubmit={(e) => {
         e.preventDefault();
         handleLogin(formData);
-      }} id="loginForm"
+      }} 
     >
       <label>
         <input

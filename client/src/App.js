@@ -54,7 +54,7 @@ function App() {
             <Login handleLogin={handleLogin} />
           </Route>
           <Route path="/">
-            <MainContainer currentStudent={currentStudent} />
+            <MainContainer />
           </Route>
         </Switch>
       </Layout>

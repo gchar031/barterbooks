@@ -1,19 +1,9 @@
-import { useState, useEffect } from "react";
-import fillerImg from "../assets/images/fillerimg.jpeg";
-import { verifyStudent } from "../services/auth";
-export default function CreateBook(props) {
-  const { handleCreate, categories} = props;
-  const [currentStudent, setCurrentS] = useState(null);
+import { useState } from "react";
 
-    useEffect(() => {
-      const handleVerify = async () => {
-        const studentData = await verifyStudent();
-        setCurrentS(studentData);
-      };
-      handleVerify();
-    }, []);
-  
-  console.log("My student", currentStudent);
+
+export default function CreateBook(props) {
+  const { handleCreate, categories, currentStudent} = props;
+
   const [bookData, setBookData] = useState({
     title: "",
     author: "",
@@ -22,8 +12,8 @@ export default function CreateBook(props) {
     description: "",
     img_url: "",
     exchange_item: "",
-    student: currentStudent.id,
-    category: 1,
+    student_id: currentStudent.id,
+    category_id: 1,
   });
 
   function handleChange(e) {
@@ -34,7 +24,13 @@ export default function CreateBook(props) {
     }));
   }
   return (
-    <form id="createBook" onSubmit={handleCreate}>
+    <form
+      id="createBook"
+      onSubmit={(e) => {
+        e.preventDefault();
+        handleCreate(currentStudent.id,bookData);
+      }}
+    >
       <label htmlFor="title">Title:</label>
       <input
         type="text"
@@ -87,7 +83,6 @@ export default function CreateBook(props) {
         type="text"
         name="img_url"
         value={bookData.img_url}
-        required
         onChange={handleChange}
       />
       <br />
@@ -103,7 +98,11 @@ export default function CreateBook(props) {
       <label htmlFor="category">Category:</label>
       <select name="category">
         {categories.map((category) => {
-          return <option value={category.id} key={category.id}>{category.name}</option>;
+          return (
+            <option value={category.id} key={category.id}>
+              {category.name}
+            </option>
+          );
         })}
       </select>
       <br />
