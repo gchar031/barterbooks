@@ -1,35 +1,40 @@
-import { useState, useEffect } from "react"
-import { Switch, Route, useHistory } from "react-router-dom"
+import { useState, useEffect } from "react";
+import { Switch, Route, useHistory } from "react-router-dom";
 import fillerImg from "../assets/images/fillerimg.jpeg";
 
-import { getAllBooks, getBook, createBook, updateBook, deleteBook} from '../services/books'
-import { getAllCategories } from '../services/categories'
+import {
+  getAllBooks,
+  createBook,
+  updateBook,
+  deleteBook,
+} from "../services/books";
+import { getAllCategories } from "../services/categories";
 import { getAllStudents } from "../services/students";
 import { verifyStudent } from "../services/auth";
 
-import CreateBook from "../screens/CreateBook"
-import EditBook from "../screens/EditBook"
-import BookDetail from '../screens/BookDetail'
+import CreateBook from "../screens/CreateBook";
+import EditBook from "../screens/EditBook";
+import BookDetail from "../screens/BookDetail";
+import Confirmation from "../screens/Confirmation";
 import Books from "../screens/Books";
-import Home from '../screens/Home'
+import Home from "../screens/Home";
 
 export default function MainContainer() {
   const [currentStudent, setCurrentS] = useState(null);
-  const [bookList, setBookList] = useState([])
-  const [book, setBook] = useState({})
-  const [categories, setCategories] = useState([])
+  const [bookList, setBookList] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [students, setStudents] = useState([]);
-  const history = useHistory()
-  
+  const history = useHistory();
+
   useEffect(() => {
     const fetchBooks = async () => {
-      const response = await getAllBooks()
-      setBookList(response)
-    }
+      const response = await getAllBooks();
+      setBookList(response);
+    };
     const fetchCategories = async () => {
-      const response = await getAllCategories()
-      setCategories(response)
-    }
+      const response = await getAllCategories();
+      setCategories(response);
+    };
     const fetchStudents = async () => {
       const response = await getAllStudents();
       setStudents(response);
@@ -39,11 +44,10 @@ export default function MainContainer() {
       setCurrentS(studentData);
     };
     handleVerify();
-    fetchBooks()
-    fetchCategories()
-    fetchStudents()
-  }, [])
-
+    fetchBooks();
+    fetchCategories();
+    fetchStudents();
+  }, []);
 
   async function handleCreate(studentID, data) {
     // to have default value for images
@@ -54,28 +58,24 @@ export default function MainContainer() {
     setBookList((prevState) => [...prevState, newBook]);
     history.push(`/books`);
   }
-  
+
   async function handleUpdate(studentID, bookID, data) {
     // to have default value for images
     if (data.img_url === "" || data.img_url === null) {
       data.img_url = fillerImg;
     }
-    const updatedBook = await updateBook(studentID, bookID, data)
-    setBookList((prevState) => prevState.map(book => {
-      return book.id === Number(updatedBook.id) ? updatedBook : book
-    }));
+    const updatedBook = await updateBook(studentID, bookID, data);
+    setBookList((prevState) =>
+      prevState.map((book) => {
+        return book.id === Number(updatedBook.id) ? updatedBook : book;
+      })
+    );
     history.push(`/books`);
   }
 
   async function handleDelete(studentID, bookID) {
-    await deleteBook(studentID, bookID)
-    setBookList((prevState) => prevState.filter(item => item.id !== bookID))
-  }
-
-  async function handleDetails(id) {
-    const found = await getBook(id)
-    setBook(found)
-    return book
+    await deleteBook(studentID, bookID);
+    setBookList((prevState) => prevState.filter((item) => item.id !== bookID));
   }
 
   return (
@@ -90,7 +90,10 @@ export default function MainContainer() {
         />
       </Route>
       <Route path="/books/:id">
-        <BookDetail handleDetails={handleDetails} />
+        <BookDetail students={students} currentStudent={currentStudent} />
+      </Route>
+      <Route path="/books/confirmation">
+        <Confirmation bookList={bookList} currentStudent={currentStudent} />
       </Route>
       <Route path="/create">
         <CreateBook
@@ -102,6 +105,7 @@ export default function MainContainer() {
       <Route path="/books">
         <Books bookList={bookList} students={students} />
       </Route>
+
       <Route path="/">
         <Home />
       </Route>

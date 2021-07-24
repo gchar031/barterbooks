@@ -12,12 +12,10 @@ export default function Register(props) {
 
   function handleChange(e) {
     const { name, value } = e.target;
-    console.log(name, value);
     setFormData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
-    console.log("After", name, value);
   }
 
   return (
