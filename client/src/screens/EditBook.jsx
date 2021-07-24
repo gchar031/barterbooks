@@ -39,11 +39,13 @@ export default function EditBook(props) {
 
   function handleChange(e) {
     const { name, value } = e.target;
+    console.log(name, value)
     setBookData((prevState) => ({
       ...prevState,
       [name]: value,
     }));
   }
+  const categoryPrev = categories.find((catg) => catg.id === bookData.category_id);
 
   return (
     <form
@@ -98,10 +100,16 @@ export default function EditBook(props) {
       </label>
       <br />
       <label htmlFor="category">Category: </label>
-      <select name="category">
+      <select
+        name="category_id"
+        defaultValue={categoryPrev?.id}
+        onChange={handleChange}
+      >
         {categories.map((category) => {
           return (
-            <option value={category.id} key={category.id}>
+            categoryPrev?.id === category.id ? <option value={category.id} key={category.id} selected>
+              {category.name}
+            </option>:<option value={category.id} key={category.id}>
               {category.name}
             </option>
           );
@@ -140,7 +148,9 @@ export default function EditBook(props) {
       <br />
       <br />
       <button type="submit">Update</button>
-      <button type="button" onClick={handleDelete}>Delete</button>
+      <button type="button" onClick={handleDelete}>
+        Delete
+      </button>
     </form>
   );
 }

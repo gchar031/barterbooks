@@ -64,7 +64,6 @@ export default function MainContainer() {
     if (data.img_url === "" || data.img_url === null) {
       data.img_url = fillerImg;
     }
-    console.log(data.id, bookID, data)
     const updatedBook = await updateBook(studentID, bookID, data);
     setBookList((prevState) =>
       prevState.map((book) => {
