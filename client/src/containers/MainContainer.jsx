@@ -108,7 +108,7 @@ export default function MainContainer() {
         />
       </Route>
       <Route path="/books">
-        <Books bookList={bookList} students={students} />
+        <Books students={students} />
       </Route>
 
       <Route path="/">

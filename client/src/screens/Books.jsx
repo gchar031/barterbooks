@@ -1,8 +1,19 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { getAllBooks } from "../services/books";
 
 export default function Books(props) {
-  const { bookList, students} = props;
-  console.log(bookList);
+  const { students } = props;
+  const [bookList, setBookList] = useState([])
+  useEffect(() => {
+    const fetchBooks = async () => {
+      const response = await getAllBooks();
+      setBookList(response);
+    };
+    fetchBooks()
+  }, [])
+  
+  
   return (
     <div className="booksList" key={1}>
       {bookList.map(book => {
