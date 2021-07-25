@@ -61,9 +61,9 @@ export default function BookDetail(props) {
         </div>
       ) : (
         <div className="detailsBtns">
-          <Link to={`/books/confirmation/${student.id}`}>
-            <button>Request Exchange</button>
-          </Link>
+            <Link to={`/books/confirmation/${student?.id}`}>
+              <button>Request Exchange</button>
+            </Link>
           <Link to={`/edit/${id}`}>
             <button>Edit</button>
           </Link>

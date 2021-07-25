@@ -81,6 +81,9 @@ export default function MainContainer() {
 
   return (
     <Switch>
+      <Route path="/books/confirmation/:id">
+        <Confirmation students={students} currentStudent={currentStudent} />
+      </Route>
       <Route path="/edit/:id">
         <EditBook
           handleUpdate={handleUpdate}
@@ -96,9 +99,6 @@ export default function MainContainer() {
           currentStudent={currentStudent}
           categories={categories}
         />
-      </Route>
-      <Route path="/books/confirmation/:id">
-        <Confirmation students={students} currentStudent={currentStudent} />
       </Route>
       <Route path="/create">
         <CreateBook
