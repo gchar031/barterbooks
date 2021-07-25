@@ -39,9 +39,11 @@ function App() {
 
   const handleLogout = async () => {
     setCurrentS(null);
+    console.log('logged out')
     localStorage.removeItem("authToken");
     removeToken();
     history.push("/");
+    console.log(currentStudent)
   };
   return (
     <div className="App">

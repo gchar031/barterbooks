@@ -15,7 +15,7 @@ export default function BookDetail(props) {
     handleDetails(id);
   }, [id]);
 
-  
+  console.log(currentStudent)
   const postedDate = new Date(book.created_at).toLocaleDateString();
   const student = students.find((student) => student.id === book.student_id);
   const category = categories.find((catg) => catg.id === book.category_id);
@@ -61,7 +61,7 @@ export default function BookDetail(props) {
         </div>
       ) : (
         <div className="detailsBtns">
-          <Link to="/books/confirmation">
+          <Link to={`/books/confirmation/${student.id}`}>
             <button>Request Exchange</button>
           </Link>
           <Link to={`/edit/${id}`}>

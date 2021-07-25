@@ -1,13 +1,18 @@
 import React from "react";
+import {useParams } from "react-router-dom";
 
-export default function Confirmation() {
+export default function Confirmation(props) {
+  const { students } = props
+  const { id } = useParams()
+  const barterer = students.find((student) => student.id === id);
+  
   return (
     <div id="confirmReq">
       <h2 className="subtitles">Confirmation</h2>
       <section id="confirmBody">
         <p>
           Your exchange request has been confirmed! To contact the barterer for
-          approval or more information <u id="confirmLink">click here</u>.
+          approval or more information <a href = {`mailto: ${barterer.email}`}>click here</a>.
         </p>
       </section>
     </div>

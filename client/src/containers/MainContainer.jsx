@@ -97,8 +97,8 @@ export default function MainContainer() {
           categories={categories}
         />
       </Route>
-      <Route path="/books/confirmation">
-        <Confirmation bookList={bookList} currentStudent={currentStudent} />
+      <Route path="/books/confirmation/:id">
+        <Confirmation students={students} currentStudent={currentStudent} />
       </Route>
       <Route path="/create">
         <CreateBook
