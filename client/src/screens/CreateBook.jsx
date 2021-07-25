@@ -31,6 +31,7 @@ export default function CreateBook(props) {
         handleCreate(currentStudent.id, bookData);
       }}
     >
+      <h2 className="subtitles">Create Book</h2>
       <label htmlFor="title">Title: </label>
       <input
         type="text"

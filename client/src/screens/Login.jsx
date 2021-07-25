@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Login(props) {
   const { handleLogin } = props;
@@ -17,12 +18,14 @@ export default function Login(props) {
   }
 
   return (
-    <form id="loginForm"
+    <form
+      id="loginForm"
       onSubmit={(e) => {
         e.preventDefault();
         handleLogin(formData);
-      }} 
+      }}
     >
+      <h2 className="subtitles">Login</h2>
       <label>
         <input
           type="text"
@@ -44,6 +47,10 @@ export default function Login(props) {
       </label>
       <br />
       <button type="submit">Login</button>
+      <p className="register_loginOp">
+        Do not have an account?
+        <Link to="/register">Sign up here!</Link>
+      </p>
     </form>
   );
 }

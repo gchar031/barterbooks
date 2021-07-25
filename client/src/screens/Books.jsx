@@ -34,9 +34,17 @@ export default function Books(props) {
   
   return (
     <div className="booksList" key={1}>
-      <button type="button" onClick={resetList}>Reset</button>
-      <select name="category" id="sortCategory" onChange={(e) => sortBooks(e.target.value)} defaultValue="all">
-        <option value="all" >Select A Category to Sort By</option>
+      <h2 className="subtitles">Books</h2>
+      <button type="button" onClick={resetList}>
+        Reset
+      </button>
+      <select
+        name="category"
+        id="sortCategory"
+        onChange={(e) => sortBooks(e.target.value)}
+        defaultValue="all"
+      >
+        <option value="all">Select A Category to Sort By</option>
         {categories.map((category) => {
           return (
             <option value={category.id} key={category.id}>
@@ -45,7 +53,7 @@ export default function Books(props) {
           );
         })}
       </select>
-      { bookList.map((book) => {
+      {bookList.map((book) => {
         return (
           <Link to={`/books/${book.id}`}>
             <div className="bookDiv" key={book.id}>

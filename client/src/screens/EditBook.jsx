@@ -55,6 +55,7 @@ export default function EditBook(props) {
         handleUpdate(bookData.student_id, id, bookData);
       }}
     >
+      <h2 className="subtitles">Edit Book</h2>
       <label htmlFor="title">Title: </label>
       <input
         type="text"
@@ -150,10 +151,13 @@ export default function EditBook(props) {
       <br />
       <br />
       <button type="submit">Update</button>
-      <button type="button" onClick={() => 
-        // e.preventDefault();
-        handleDelete(bookData.student_id, id)
-      }>
+      <button
+        type="button"
+        onClick={() =>
+          // e.preventDefault();
+          handleDelete(bookData.student_id, id)
+        }
+      >
         Delete
       </button>
     </form>

@@ -22,6 +22,7 @@ export default function BookDetail(props) {
   
   return (
     <div className="bookDetails">
+      <h2 className="subtitles">Book Detail</h2>
       <h3>{book.title}</h3>
       <img src={book.img_url} alt={book.title} />
       <hr id="detail_divider" />

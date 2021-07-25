@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Register(props) {
   const [formData, setFormData] = useState({
@@ -26,6 +27,7 @@ export default function Register(props) {
       }}
       id="registerForm"
     >
+      <h2 className="subtitles">Register</h2>
       <label htmlFor="username"> Username:</label>
       <input
         type="text"
@@ -65,6 +67,9 @@ export default function Register(props) {
       />
       <br />
       <button type="submit">Register</button>
+      <p className="register_loginOp">
+        Already have an account? <Link to="/login">Sign in here!</Link>
+      </p>
     </form>
   );
 }
