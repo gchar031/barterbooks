@@ -19,11 +19,11 @@ export const createBook = async (studntID,formData) => {
 };
 
 export const updateBook = async (studntID, bookId, formData) => {
-  const resp = await api.put(`/students/${studntID}/books/${bookId}`, { book: formData});
+  const resp = await api.put(`/students/${studntID}/books/${bookId}`, { book: formData });
   return resp.data;
 };
 
-export const deleteBook = async (id) => {
-  const resp = await api.delete("/books");
+export const deleteBook = async (studntID,bookId) => {
+  const resp = await api.delete(`/students/${studntID}/books/${bookId}`);
   return resp.data;
 };

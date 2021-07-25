@@ -76,6 +76,7 @@ export default function MainContainer() {
   async function handleDelete(studentID, bookID) {
     await deleteBook(studentID, bookID);
     setBookList((prevState) => prevState.filter((item) => item.id !== bookID));
+    history.push(`/books`);
   }
 
   return (

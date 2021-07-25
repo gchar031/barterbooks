@@ -36,12 +36,12 @@ export default function BookDetail(props) {
           id="descDetail"
           rows="5"
           cols="15"
-          readonly
+          readOnly
           value={book.description}
         />
 
         <br />
-        {category ? <p>Category: {category.name}</p> : <p>Category:  N/A </p>}
+        {category ? <p>Category: {category.name}</p> : <p>Category: N/A </p>}
 
         <p>Exchange Item: {book.exchange_item}</p>
         <p>Exchange Counter: {book.exchange_counter}</p>

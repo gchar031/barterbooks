@@ -106,10 +106,12 @@ export default function EditBook(props) {
         onChange={handleChange}
       >
         {categories.map((category) => {
-          return (
-            categoryPrev?.id === category.id ? <option value={category.id} key={category.id} selected>
+          return categoryPrev?.id === category.id ? (
+            <option value={category.id} key={category.id} selected>
               {category.name}
-            </option>:<option value={category.id} key={category.id}>
+            </option>
+          ) : (
+            <option value={category.id} key={category.id}>
               {category.name}
             </option>
           );
@@ -148,7 +150,10 @@ export default function EditBook(props) {
       <br />
       <br />
       <button type="submit">Update</button>
-      <button type="button" onClick={handleDelete}>
+      <button type="button" onClick={() => 
+        // e.preventDefault();
+        handleDelete(bookData.student_id, id)
+      }>
         Delete
       </button>
     </form>
