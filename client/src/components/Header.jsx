@@ -29,9 +29,15 @@ export default function Header(props) {
         <Link to="/books">
           <li>Books</li>
         </Link>
-        <Link to="/create">
-          <li>Create Book</li>
-        </Link>
+        {currentStudent ? (
+          <Link to="/create">
+            <li>Create Book</li>
+          </Link>
+        ) : (
+          <Link to="/register">
+            <li>Create Book</li>
+          </Link>
+        )}
       </ul>
       <div className="loginRegister">{checkLogin()}</div>
     </nav>
