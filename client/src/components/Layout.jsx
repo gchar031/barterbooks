@@ -7,7 +7,6 @@ export default function Layout(props) {
   return (
     <div>
       <Header currentStudent={currentStudent} handleLogout={handleLogout} />
-      <hr />
       {props.children}
       <hr />
       <Footer />

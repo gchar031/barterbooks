@@ -1,0 +1,109 @@
+
+nav{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  background-color: #6D9DC5;
+  color: white;
+  font-family: 'Red Hat Display', sans-serif;
+}
+nav a:visited, a:link {
+  text-decoration: none;
+  color: white;
+}
+
+#title{
+  font-family: 'Titan One', cursive;
+  font-size: 1.9em;
+}
+.title-link{
+  width: 65%;
+  padding-top: 10px;
+  text-align: center;
+}
+
+.menu{
+  display: none;
+  list-style-type:none;
+}
+#menu-btn{
+  width: 15%;
+  padding-top: 20px;
+}
+.menup{
+  margin-top: 4px;
+}
+.show {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  list-style-type:none;
+  justify-content: space-evenly;
+  margin-left: -40px;
+}
+#close-menu{
+  color: red;
+  padding-right: 10px;
+
+}
+
+
+
+.login-register{
+  display: flex;
+  flex-flow: row wrap;
+  width: 20%;
+  padding-top: 35px;
+}
+#register-btn{
+  margin-left: 10px;
+}
+#login-btn{
+  display: none;
+}
+
+
+
+
+/* tablet media query */
+@media screen and (min-width: 700px){
+  nav{
+    font-size: 1.2em;
+  }
+  #login-btn{
+    display: flex;
+    margin-top: -6px;
+  }
+  .login-btns{
+    display: flex;
+    margin-left: 30px;
+  }
+  #title{
+    font-size: 2.3em;
+  }
+  #register-btn, #login-btn{
+    margin-left: 10px;
+    padding: 5px;
+  }
+  .title-link{
+    width: 60%;
+    padding-top: 10px;
+  }
+  .fa-sign-in-alt{
+    font-size: larger;
+  }
+  .fa-user-plus{
+    font-size: large;
+  }
+  .login-register{
+    padding-top: 40px;
+  }
+  .menup{
+    font-size: large;
+  }
+  #menu-btn {
+    width: 15%;
+    padding-top: 30px;
+  }
+}

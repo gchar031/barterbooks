@@ -6,10 +6,10 @@ export default function Footer() {
       <p id="developer">By Gilda Charles</p>
       <div id="socialIcons">
       <a href="linkedin.com/in/gilda-char">
-        <i class="fab fa-github"></i>
+        <i className="fab fa-github"></i>
       </a>
       <a href="https://github.com/gchar031">
-        <i class="fab fa-linkedin"></i>
+        <i className="fab fa-linkedin"></i>
         </a>
       </div>
     </footer>
