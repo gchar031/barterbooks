@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 
 export default function Home() {
+  
   return (
     <div className="about">
       <h2 className="subtitles">About</h2>

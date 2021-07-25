@@ -25,7 +25,5 @@ export const verifyStudent = async () => {
 };
 
 export const removeToken = () => {
-  console.log('will remove')
   api.defaults.headers.common.authorization = null;
-  console.log("removed");
 };

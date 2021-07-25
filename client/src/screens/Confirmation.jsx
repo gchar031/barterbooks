@@ -4,7 +4,7 @@ export default function Confirmation(props) {
   const { students } = props
   const { id } = useParams()
   const barterer = students.find((student) => student.id === Number(id));
-  console.log(barterer, students,id)
+  
   return (
     <div id="confirmReq">
       <h2 className="subtitles">Confirmation</h2>
