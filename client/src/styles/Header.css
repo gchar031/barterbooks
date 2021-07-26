@@ -27,7 +27,7 @@ nav a:visited, a:link {
   list-style-type:none;
 }
 #menu-btn{
-  width: 15%;
+  width: 13%;
   padding-top: 20px;
 }
 .menup{
@@ -108,7 +108,13 @@ nav a:visited, a:link {
     font-size: large;
   }
   #menu-btn {
-    width: 15%;
+    width: 13%;
     padding-top: 30px;
+  }
+  .logout{
+  font-size: xx-large;
+  padding-top: 20px;
+  margin: auto;
+  margin-left:20px ;
   }
 }

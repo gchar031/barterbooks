@@ -35,7 +35,7 @@ export default function Header(props) {
   return (
     <nav>
       <p onClick={() => setMenuDisplay("show")} id="menu-btn">
-        <i className="fas fa-bars">
+        <i className="fas fa-bars ">
           <span className="menup">  Menu</span>
         </i>
       </p>
