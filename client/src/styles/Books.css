@@ -1,6 +1,28 @@
 .books-list{
   font-family:'Red Hat Display', sans-serif ;
 }
+#control-list{
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+}
+#reset{
+  width: 40%;
+  padding:10px;
+  margin: auto;
+}
+#sort-category{
+  width: 50%;
+  padding:10px;
+  margin: auto;
+}
+#control-list > select{
+  text-align: center;
+}
+
+.subtitles{
+  width: 100%;
+}
 .book-div{
   display: flex;
   margin: 15px auto;
@@ -26,8 +48,45 @@
   width: 70%;
   text-align: left;
   padding-left: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
+.list-img{
+  display: none;
+}
+
+
 /* tablet media query */
 @media screen and (min-width: 700px){
+  .books-list{
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+  }
+  .book-div-tablet{
+    display: flex;
+    flex-flow: row wrap;
+    width: 30%;
+    height: auto;
+    margin: 10px;
+  }
+  .book-div{
+    display: flex;
+    flex-flow: row wrap;
+    max-height: 500px;
+  }
+  .books-titles{
+    width: 100%;
+  }
 
+  .img-container{
+    width: 100%;
+    align-items: center;
+  }
+  .list-img{
+    display: revert;
+    max-height: 160px;
+    max-width: 100%;
+  }
 }

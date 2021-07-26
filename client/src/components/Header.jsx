@@ -32,12 +32,11 @@ export default function Header(props) {
   }
 
 
-  console.log(menuDisplay)
   return (
     <nav>
       <p onClick={() => setMenuDisplay("show")} id="menu-btn">
         <i className="fas fa-bars">
-          <p className="menup">Menu</p>
+          <span className="menup">  Menu</span>
         </i>
       </p>
       <Link to="/" className="title-link">

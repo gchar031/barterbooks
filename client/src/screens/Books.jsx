@@ -36,29 +36,32 @@ export default function Books(props) {
   return (
     <div className="books-list" key={1}>
       <h2 className="subtitles">Books</h2>
-      <button type="button" onClick={resetList}>
-        Reset
-      </button>
-      <select
-        name="category"
-        id="sortCategory"
-        onChange={(e) => sortBooks(e.target.value)}
-        defaultValue="all"
-      >
-        <option value="all">Select A Category to Sort By</option>
-        {categories.map((category) => {
-          return (
-            <option value={category.id} key={category.id}>
-              {category.name}
-            </option>
-          );
-        })}
-      </select>
+      <div id="control-list">
+        <p onClick={resetList} id="reset">
+          Reset
+        </p>
+        <select
+          name="category"
+          id="sort-category"
+          onChange={(e) => sortBooks(e.target.value)}
+          defaultValue="all"
+        >
+          <option value="all">Select A Category to Sort By</option>
+          {categories.map((category) => {
+            return (
+              <option value={category.id} key={category.id}>
+                {category.name}
+              </option>
+            );
+          })}
+          </select>
+      </div>
       {bookList.map((book) => {
         return (
-          <Link to={`/books/${book.id}`}>
+          <Link to={`/books/${book.id}`} className="book-div-tablet">
             <div className="book-div" key={book.id}>
-              <h4 className='books-titles'>{book.title}</h4>
+              <div className="img-container"><img src={book.img_url} alt={book.title} className="list-img" /></div>
+              <h4 className="books-titles">{book.title}</h4>
               <section className="bookPreview" key={book.id}>
                 <p key={book.exchange_item}>
                   Exchange Item: {book.exchange_item}
