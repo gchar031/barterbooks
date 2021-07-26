@@ -17,7 +17,7 @@ nav a:visited, a:link {
   font-size: 1.9em;
 }
 .title-link{
-  width: 65%;
+  width: 60%;
   padding-top: 10px;
   text-align: center;
 }
@@ -27,7 +27,7 @@ nav a:visited, a:link {
   list-style-type:none;
 }
 #menu-btn{
-  width: 13%;
+  width: 18%;
   padding-top: 20px;
 }
 .menup{
@@ -58,6 +58,8 @@ nav a:visited, a:link {
 .login-btns{
   display: flex;
   flex-flow: row wrap;
+  justify-content: flex-end;
+  font-size: small;
   width: 20%;
   padding-top: 35px;
 }
@@ -79,10 +81,10 @@ nav a:visited, a:link {
   #login-btn{
     display: flex;
     margin-top: -6px;
+        width: 25%;
   }
   .login-btns{
     display: flex;
-    margin-left: 30px;
   }
   #title{
     font-size: 2.3em;
@@ -95,11 +97,12 @@ nav a:visited, a:link {
     width: 60%;
     padding-top: 10px;
   }
-  .fa-sign-in-alt{
-    font-size: larger;
+  
+  .fa-user-plus,.fa-sign-in-alt{
+    font-size: 3vw;
   }
-  .fa-user-plus{
-    font-size: large;
+  .fa-sign-in-alt{
+        padding-top: 7px;
   }
   .login-register{
     padding-top: 40px;
@@ -108,7 +111,7 @@ nav a:visited, a:link {
     font-size: large;
   }
   #menu-btn {
-    width: 13%;
+    width: 14%;
     padding-top: 30px;
   }
   .logout{

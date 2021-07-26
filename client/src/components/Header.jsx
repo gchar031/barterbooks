@@ -23,8 +23,10 @@ export default function Header(props) {
         </div>
         <div id="login-btn">
           <Link to="/login" className="menu-link">
-            <i className="fas fa-sign-in-alt"></i>
-            <p className="menup">Login</p>
+              <i className="fas fa-sign-in-alt">
+                <p className="menup">Login</p>
+            </i>
+            
           </Link>
         </div>
       </div>
