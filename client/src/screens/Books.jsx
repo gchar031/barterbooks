@@ -7,6 +7,8 @@ export default function Books(props) {
   const { students, categories } = props;
   const [bookList, setBookList] = useState([])
   const [allList, setAllList] = useState(bookList)
+  const [selected, setSelected] = useState(null)
+
   useEffect(() => {
     const fetchBooks = async () => {
       const response = await getAllBooks();
@@ -42,14 +44,18 @@ export default function Books(props) {
         </p>
         <select
           name="category"
-          id="sort-category"
-          onChange={(e) => sortBooks(e.target.value)}
+          className={"sort-category " + selected}
+          onChange={(e) => {
+            sortBooks(e.target.value)
+            setSelected('selected')
+          }
+          }
           defaultValue="all"
         >
           <option value="all">Select A Category to Sort By</option>
           {categories.map((category) => {
             return (
-              <option value={category.id} key={category.id}>
+              <option value={category.id} key={category.id} className="options">
                 {category.name}
               </option>
             );
@@ -60,7 +66,9 @@ export default function Books(props) {
         return (
           <Link to={`/books/${book.id}`} className="book-div-tablet">
             <div className="book-div" key={book.id}>
-              <div className="img-container"><img src={book.img_url} alt={book.title} className="list-img" /></div>
+              <div className="img-container">
+                <img src={book.img_url} alt={book.title} className="list-img" />
+              </div>
               <h4 className="books-titles">{book.title}</h4>
               <section className="bookPreview" key={book.id}>
                 <p key={book.exchange_item}>
@@ -76,6 +84,7 @@ export default function Books(props) {
                     ""
                   );
                 })}
+                <br />
               </section>
             </div>
           </Link>
