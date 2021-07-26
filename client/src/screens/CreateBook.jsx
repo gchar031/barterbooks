@@ -1,13 +1,9 @@
 import { useState } from "react";
-import { Redirect } from "react-router-dom";
 import "../styles/CreateEditForm.css";
 
 export default function CreateBook(props) {
   const { handleCreate, categories, currentStudent } = props;
-  console.log(currentStudent)
-  if (currentStudent.id === null) {
-    <Redirect exact path="/create"/>
-  }
+
   const [bookData, setBookData] = useState({
     title: "",
     author: "",
@@ -16,7 +12,7 @@ export default function CreateBook(props) {
     description: "",
     img_url: "",
     exchange_item: "",
-    student_id: currentStudent.id,
+    student_id: currentStudent?.id,
     category_id: 1,
   });
 
@@ -38,7 +34,9 @@ export default function CreateBook(props) {
       }}
     >
       <h2 className="subtitles">Create Book</h2>
-      <label htmlFor="title">Title: </label>
+      <label htmlFor="title" className="form-lbl">
+        Title:{" "}
+      </label>
       <input
         type="text"
         name="title"
@@ -47,7 +45,9 @@ export default function CreateBook(props) {
         onChange={handleChange}
       />
       <br />
-      <label htmlFor="author">Author: </label>
+      <label htmlFor="author" className="form-lbl">
+        Author:{" "}
+      </label>
       <input
         type="text"
         name="author"
@@ -56,44 +56,9 @@ export default function CreateBook(props) {
         onChange={handleChange}
       />
       <br />
-      <label htmlFor="year">
-        Year:
-        <input
-          type="number"
-          name="year"
-          value={bookData.year}
-          min="1700"
-          max="2099"
-          step="1"
-          required
-          onChange={handleChange}
-        />
+      <label htmlFor="img_url" className="form-lbl">
+        Image URL:{" "}
       </label>
-      <label htmlFor="edition">
-        Editon:
-        <input
-          type="number"
-          name="edition"
-          value={bookData.edition}
-          min="0"
-          max="100"
-          required
-          onChange={handleChange}
-        />{" "}
-      </label>
-      <br />
-      <label htmlFor="category">Category: </label>
-      <select name="category">
-        {categories.map((category) => {
-          return (
-            <option value={category.id} key={category.id}>
-              {category.name}
-            </option>
-          );
-        })}
-      </select>
-      <br />
-      <label htmlFor="img_url">Image URL: </label>
       <input
         type="text"
         name="img_url"
@@ -101,7 +66,9 @@ export default function CreateBook(props) {
         onChange={handleChange}
       />
       <br />
-      <label htmlFor="exchange_item">Exchange Item: </label>
+      <label htmlFor="exchange_item" className="form-lbl">
+        Exchange Item:{" "}
+      </label>
       <input
         type="text"
         name="exchange_item"
@@ -111,17 +78,59 @@ export default function CreateBook(props) {
         required
       />
       <br />
-      <label htmlFor="description">Description: </label>
-      <br />
-      <br />
-      <textarea
-        name="description"
-        value={bookData.description}
+      <label htmlFor="year" className="year-input form-lbl">
+        Year:
+      </label>
+      <input
+        type="number"
+        name="year"
+        value={bookData.year}
+        min="1700"
+        max="2099"
+        step="1"
         required
         onChange={handleChange}
-        rows="5"
-        cols="20"
-      ></textarea>
+      />
+      <label htmlFor="edition" className="edition-input form-lbl">
+        Edition:
+      </label>
+      <input
+        type="number"
+        name="edition"
+        value={bookData.edition}
+        min="0"
+        max="100"
+        required
+        onChange={handleChange}
+      />{" "}
+      <br />
+      <label htmlFor="category" className="category-lbl">
+        Category:
+      </label>
+      <select name="category" className="category-selection">
+        {categories.map((category) => {
+          return (
+            <option value={category.id} key={category.id}>
+              {category.name}
+            </option>
+          );
+        })}
+      </select>
+      <br />
+      <label htmlFor="description" className="desc-lbl">
+        Description:{" "}
+      </label>
+      <br />
+      <div className="textarea-container">
+        <textarea
+          name="description"
+          value={bookData.description}
+          required
+          onChange={handleChange}
+          rows="10"
+          cols="25"
+        ></textarea>
+      </div>
       <br />
       <br />
       <button type="submit">Submit</button>
