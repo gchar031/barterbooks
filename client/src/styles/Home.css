@@ -1,5 +1,5 @@
 
-/* font-familt for header title: Titan One */
+
 /* font-family Red Hat for body
 Regular 400
 Regular 400 italic
@@ -7,3 +7,41 @@ Medium 500
 Bold 700
 Bold 700 italic
  */
+.about{
+  display: flex;
+  font-family: 'Red Hat Display', sans-serif;
+  flex-flow: row wrap;
+  border: 8px solid #3066BE;
+  box-sizing: border-box;
+  width: 75%;
+  height: 100%;
+  margin: auto;
+  margin-top: 50px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 10px 6px 12px 0px;
+  padding: 15px;
+}
+.about > p{
+  text-align: left;
+  font-size: larger;
+}
+.subtitles{
+  font-family: 'Red Hat Display', sans-serif;
+  font-weight: 900;
+  font-style: inherit;
+  color: #119DA4;
+  text-align: center;
+  width: 100%;
+  font-size: xx-large;
+}
+#about-link{
+  margin: 10px auto;
+  background-color: #6D9DC5;
+  padding: 5px;
+  
+}
+.about a:visited, a:link {
+  text-decoration: none;
+  color: white;
+}
