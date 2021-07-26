@@ -48,9 +48,14 @@ nav a:visited, a:link {
 
 }
 
-
-
-.login-register{
+.logout{
+  font-size: larger;
+}
+#welcome{
+  width: 20%;
+  padding-top: 30px;
+}
+.login-btns{
   display: flex;
   flex-flow: row wrap;
   width: 20%;
