@@ -1,9 +1,13 @@
 import { useState } from "react";
-
+import { Redirect } from "react-router-dom";
+import "../styles/CreateEditForm.css";
 
 export default function CreateBook(props) {
-  const { handleCreate, categories, currentStudent} = props;
-
+  const { handleCreate, categories, currentStudent } = props;
+  console.log(currentStudent)
+  if (currentStudent.id === null) {
+    <Redirect exact path="/create"/>
+  }
   const [bookData, setBookData] = useState({
     title: "",
     author: "",
@@ -23,9 +27,11 @@ export default function CreateBook(props) {
       [name]: value,
     }));
   }
+
   return (
     <form
       id="createBook"
+      className="book-form"
       onSubmit={(e) => {
         e.preventDefault();
         handleCreate(currentStudent.id, bookData);

@@ -1,0 +1,14 @@
+.book-form{
+  width: 80%;
+  margin: 10px auto;
+  padding: 10px;
+  background-image: url('../assets/images/bookdiv.png') ;
+  background-size: cover;
+  font-family:'Red Hat Display', sans-serif ;
+  display: flex;
+  flex-flow: row wrap;
+}
+.book-form > label{
+  width: 50%;
+  text-align: left;
+}

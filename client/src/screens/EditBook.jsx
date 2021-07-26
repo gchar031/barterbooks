@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import '../styles/CreateEditForm.css'
 
 export default function EditBook(props) {
   const { handleUpdate, handleDelete,  categories, bookList } = props;
@@ -49,7 +50,8 @@ export default function EditBook(props) {
 
   return (
     <form
-      id="createBook"
+      id="editBook"
+      className="book-form"
       onSubmit={(e) => {
         e.preventDefault();
         handleUpdate(bookData.student_id, id, bookData);
