@@ -1,51 +1,51 @@
-.books-list{
-  font-family:'Red Hat Display', sans-serif ;
+.books-list {
+  font-family: "Red Hat Display", sans-serif;
 }
-#control-list{
+#control-list {
   display: flex;
   flex-flow: row wrap;
   width: 100%;
 }
-#reset{
+#reset {
   width: 30%;
   padding: 7px;
   margin: auto;
   border: 2px solid darkblue;
 }
-.sort-category{
+.sort-category {
   width: 60%;
-  padding:10px;
+  padding: 10px;
   margin: auto;
   text-align-last: center;
-  background-color: #AEECEF;
-  color: #3066BE;
+  background-color: #aeecef;
+  color: #3066be;
 }
-.options, .selected{
-  color: #3066BE;
+.options,
+.selected {
+  color: #3066be;
   font-weight: bold;
 }
 
-
-
-.subtitles{
+.subtitles {
   width: 100%;
 }
-.book-div{
+.book-div {
   display: flex;
   margin: 15px auto;
   background-color: white;
   width: 100%;
   color: black;
-  border: 5px inset #3066BE;
+  border: 5px inset #3066be;
   padding: 5px;
   box-sizing: border-box;
   border-radius: 20px;
 }
-.books-div a:visited, a:link {
+.books-div a:visited,
+a:link {
   text-decoration: none;
   color: black;
 }
-.books-titles{
+.books-titles {
   width: 40%;
   padding: 10px;
   font-size: x-large;
@@ -53,65 +53,81 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.bookPreview{
+.bookPreview {
   width: 50%;
   text-align: left;
   padding-left: 15px;
 }
-.bookPreview >p{
+.bookPreview > p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-.list-img{
+.list-img {
   display: none;
 }
 
+.btnLink > button {
+  width: 80%;
+  background-color: #3066be;
+  color: white;
+  padding: 5px;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
 /* tablet media query */
-@media screen and (min-width: 700px){
-  .books-list{
+@media screen and (min-width: 700px) {
+  .books-list {
     display: flex;
     flex-flow: row wrap;
+    justify-content: space-around;
     width: 100%;
   }
-  .book-div-tablet{
+  .book-div-tablet {
     display: flex;
     flex-flow: row wrap;
-    width: 30%;
+    width: 20%;
     height: auto;
     margin: 10px;
   }
-  .book-div{
+  .book-div {
     display: flex;
     flex-flow: row wrap;
     max-height: 500px;
   }
-  .books-titles{
+  .books-titles {
     width: 100%;
   }
 
-  .img-container{
+  .img-container {
     width: 100%;
     align-items: center;
     background-color: aliceblue;
   }
-  .list-img{
+  .list-img {
     display: revert;
     max-height: 150px;
     max-width: 100%;
   }
 
-  .bookPreview{
+  .bookPreview {
     width: 95%;
   }
-  .sort-category{
+  .sort-category {
     width: 30%;
   }
   .sort-category:focus {
-	border-color: #aaa;
-	box-shadow: 0 0 1px 3px rgba(59, 153, 252, .7);
-	box-shadow: 0 0 0 3px -moz-mac-focusring;
-	color: #222;
-	outline: none;
+    border-color: #aaa;
+    box-shadow: 0 0 1px 3px rgba(59, 153, 252, 0.7);
+    box-shadow: 0 0 0 3px -moz-mac-focusring;
+    color: #222;
+    outline: none;
+  }
 }
+/* bigger screens */
+@media screen and (min-width: 1000px) {
+  .book-div-tablet {
+    max-width: 40%;
+  }
 }

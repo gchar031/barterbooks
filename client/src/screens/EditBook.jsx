@@ -171,10 +171,7 @@ export default function EditBook(props) {
       <button type="submit">Update</button>
       <button
         type="button"
-        onClick={() =>
-          // e.preventDefault();
-          handleDelete(bookData.student_id, id)
-        }
+        onClick={() => handleDelete(bookData.student_id, id)}
       >
         Delete
       </button>
