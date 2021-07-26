@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getAllBooks } from "../services/books";
+import '../styles/Books.css'
 
 export default function Books(props) {
   const { students, categories } = props;
@@ -33,7 +34,7 @@ export default function Books(props) {
 
   
   return (
-    <div className="booksList" key={1}>
+    <div className="books-list" key={1}>
       <h2 className="subtitles">Books</h2>
       <button type="button" onClick={resetList}>
         Reset
@@ -56,8 +57,8 @@ export default function Books(props) {
       {bookList.map((book) => {
         return (
           <Link to={`/books/${book.id}`}>
-            <div className="bookDiv" key={book.id}>
-              <h2>{book.title}</h2>
+            <div className="book-div" key={book.id}>
+              <h4 className='books-titles'>{book.title}</h4>
               <section className="bookPreview" key={book.id}>
                 <p key={book.exchange_item}>
                   Exchange Item: {book.exchange_item}
