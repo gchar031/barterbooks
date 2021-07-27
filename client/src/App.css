@@ -8,6 +8,7 @@
 .layout-children {
   margin-top: 5vh;
   margin-bottom: 5vh;
+  min-height: 70vh;
 }
 .App-logo {
   height: 40vmin;
