@@ -1,8 +1,15 @@
 .App {
   text-align: center;
-  
+  height: 100vh;
 }
-
+.layout {
+  height: 100vh;
+}
+.layout-children {
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  min-height: 70vh;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -36,4 +43,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@media screen and (min-width: 700px) {
 }

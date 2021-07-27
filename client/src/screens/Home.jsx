@@ -5,7 +5,7 @@ export default function Home() {
   
   return (
     <div className="about">
-      <h2 className="subtitles">About</h2>
+      <h2 className="subtitles about-title">About</h2>
       <p>
         College supllies can be very expensive and add up over time especially
         when it comes to books. If you need a book for an upcoming course view

@@ -5,10 +5,9 @@ import Footer from "./Footer";
 export default function Layout(props) {
   const { currentStudent, handleLogout } = props;
   return (
-    <div>
+    <div className="layout">
       <Header currentStudent={currentStudent} handleLogout={handleLogout} />
-      {props.children}
-      <hr />
+      <div className="layout-children">{props.children}</div>
       <Footer />
     </div>
   );

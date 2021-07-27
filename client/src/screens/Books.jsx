@@ -1,24 +1,23 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { getAllBooks } from "../services/books";
-import '../styles/Books.css'
+import "../styles/Books.css";
 
 export default function Books(props) {
-  const { students, categories } = props;
-  const [bookList, setBookList] = useState([])
-  const [allList, setAllList] = useState(bookList)
-  const [selected, setSelected] = useState(null)
+  const { students, categories, currentStudent } = props;
+  const [bookList, setBookList] = useState([]);
+  const [allList, setAllList] = useState(bookList);
+  const [selected, setSelected] = useState(null);
 
   useEffect(() => {
     const fetchBooks = async () => {
       const response = await getAllBooks();
       setBookList(response);
-      setAllList(response)
+      setAllList(response);
     };
-    fetchBooks()
-  }, [])
-  
-  
+    fetchBooks();
+  }, []);
+
   function sortBooks(categoryID) {
     if (categoryID !== "all") {
       const list = allList.filter(
@@ -31,10 +30,9 @@ export default function Books(props) {
   }
   // reset to show all books on page
   function resetList() {
-    setBookList(allList)
+    setBookList(allList);
   }
 
-  
   return (
     <div className="books-list" key={1}>
       <h2 className="subtitles">Books</h2>
@@ -46,10 +44,9 @@ export default function Books(props) {
           name="category"
           className={"sort-category " + selected}
           onChange={(e) => {
-            sortBooks(e.target.value)
-            setSelected('selected')
-          }
-          }
+            sortBooks(e.target.value);
+            setSelected("selected");
+          }}
           defaultValue="all"
         >
           <option value="all">Select A Category to Sort By</option>
@@ -60,7 +57,7 @@ export default function Books(props) {
               </option>
             );
           })}
-          </select>
+        </select>
       </div>
       {bookList.map((book) => {
         return (
@@ -85,6 +82,22 @@ export default function Books(props) {
                   );
                 })}
                 <br />
+                {currentStudent === null ? (
+                  <div className="detailsBtns">
+                    <Link to="/register" className="btnLink">
+                      <button>Request Exchange</button>
+                    </Link>
+                  </div>
+                ) : (
+                  <div className="detailsBtns">
+                    <Link
+                      to={`/books/confirmation/${currentStudent.id}`}
+                      className="btnLink"
+                    >
+                      <button>Request Exchange</button>
+                    </Link>
+                  </div>
+                )}
               </section>
             </div>
           </Link>

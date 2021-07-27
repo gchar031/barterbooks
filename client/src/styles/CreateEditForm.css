@@ -1,14 +1,104 @@
-.book-form{
+/* gradient helper:  https://cssgradient.io/*/
+.book-form {
   width: 80%;
   margin: 10px auto;
   padding: 10px;
-  background-image: url('../assets/images/bookdiv.png') ;
-  background-size: cover;
-  font-family:'Red Hat Display', sans-serif ;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 21%,
+    rgba(128, 222, 217, 1) 85%
+  );
+  font-family: "Red Hat Display", sans-serif;
   display: flex;
-  flex-flow: row wrap;
+  border-radius: 15px;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
-.book-form > label{
-  width: 50%;
+
+.form-lbl {
+  width: 100%;
   text-align: left;
+  justify-items: left;
+  padding: 6px 0px;
+  margin: 5px -4px;
+  margin-left: 15px;
+  margin-bottom: 5px;
+}
+.book-form > input {
+  justify-content: right;
+  padding: 4px 5px;
+  /* margin: 8px 2px; */
+  margin: auto;
+  margin-bottom: 5px;
+  width: 90%;
+}
+.book-form > textarea {
+  justify-content: center;
+}
+.book-form > button {
+  width: 40%;
+  background-color: #3066be;
+  color: white;
+  padding: 5px;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.desc-lbl {
+  margin: 10px auto;
+  width: 100%;
+  text-align: center;
+}
+
+.category-lbl {
+  width: 45%;
+  text-align: left;
+  margin: 5px -4px;
+  margin-left: 15px;
+}
+.category-selection {
+  width: 85%;
+  margin: auto;
+  padding: 5px;
+}
+
+textarea {
+  overflow: auto;
+  max-width: 90%;
+  text-align: center;
+  resize: none;
+  /* margin-top: 5px; */
+}
+.textarea-container {
+  margin: 0px 5px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+@media screen and (min-width: 800px) {
+  .book-form {
+    flex-flow: row wrap;
+  }
+  /* .book-form > label  */
+  .form-lbl {
+    width: 40%;
+  }
+  .book-form > input {
+    width: 50%;
+  }
+  .category-lbl {
+    width: 45%;
+    margin: 5px auto;
+    margin-left: 15px;
+  }
+  .category-selection {
+    width: 40%;
+  }
+  .desc-lbl {
+    width: 100%;
+    margin: 15px auto;
+  }
+  textarea {
+    margin-top: 10px;
+  }
 }
