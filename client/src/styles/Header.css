@@ -1,36 +1,37 @@
-
-nav{
+nav {
   display: flex;
   flex-flow: row wrap;
   width: 100%;
-  background-color: #6D9DC5;
+  background-color: #6d9dc5;
   color: white;
-  font-family: 'Red Hat Display', sans-serif;
+  font-family: "Red Hat Display", sans-serif;
+  max-height: 15vh;
 }
-nav a:visited, a:link {
+nav a:visited,
+a:link {
   text-decoration: none;
   color: white;
 }
 
-#title{
-  font-family: 'Titan One', cursive;
+#title {
+  font-family: "Titan One", cursive;
   font-size: 1.9em;
 }
-.title-link{
+.title-link {
   width: 60%;
   padding-top: 10px;
   text-align: center;
 }
 
-.menu{
+.menu {
   display: none;
-  list-style-type:none;
+  list-style-type: none;
 }
-#menu-btn{
+#menu-btn {
   width: 18%;
   padding-top: 20px;
 }
-.menup{
+.menup {
   margin-top: 4px;
 }
 .show {
@@ -38,24 +39,23 @@ nav a:visited, a:link {
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
-  list-style-type:none;
+  list-style-type: none;
   justify-content: space-evenly;
   margin-left: -40px;
 }
-#close-menu{
+#close-menu {
   color: red;
   padding-right: 10px;
-
 }
 
-.logout{
+.logout {
   font-size: larger;
 }
-#welcome{
+#welcome {
   width: 20%;
   padding-top: 30px;
 }
-.login-btns{
+.login-btns {
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
@@ -63,61 +63,60 @@ nav a:visited, a:link {
   width: 20%;
   padding-top: 35px;
 }
-#register-btn{
+#register-btn {
   margin-left: 10px;
 }
-#login-btn{
+#login-btn {
   display: none;
 }
 
-
-
-
 /* tablet media query */
-@media screen and (min-width: 700px){
-  nav{
+@media screen and (min-width: 700px) {
+  nav {
     font-size: 1.2em;
   }
-  #login-btn{
+  #login-btn {
     display: flex;
     margin-top: -6px;
-        width: 25%;
+    width: 25%;
   }
-  .login-btns{
+  .login-btns {
     display: flex;
   }
-  #title{
+  #title {
     font-size: 2.3em;
   }
-  #register-btn, #login-btn{
+  #register-btn,
+  #login-btn {
     margin-left: 10px;
     padding: 5px;
   }
-  .title-link{
+  .title-link {
     width: 60%;
     padding-top: 10px;
   }
-  
-  .fa-user-plus,.fa-sign-in-alt{
+
+  .fa-user-plus,
+  .fa-sign-in-alt {
     font-size: 3vw;
   }
-  .fa-sign-in-alt{
-        padding-top: 7px;
+  .fa-sign-in-alt {
+    padding-top: 7px;
   }
-  .login-register{
+  .login-register {
     padding-top: 40px;
   }
-  .menup{
+  .menup {
     font-size: large;
   }
   #menu-btn {
     width: 14%;
     padding-top: 30px;
   }
-  .logout{
-  font-size: xx-large;
-  padding-top: 20px;
-  margin: auto;
-  margin-left:20px ;
+  .logout {
+    font-size: xx-large;
+    padding-top: 20px;
+    margin: auto;
+    margin-left: 20px;
   }
 }

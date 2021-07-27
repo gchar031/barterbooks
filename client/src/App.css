@@ -1,8 +1,15 @@
 .App {
   text-align: center;
-  
+  height: 100vh;
 }
-
+.layout {
+  height: 100vh;
+}
+.layout-children {
+  margin-top: 5vh;
+  min-height: 80vh;
+  max-height: 90vh;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
