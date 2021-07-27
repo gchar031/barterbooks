@@ -1,0 +1,28 @@
+#confirmReq {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(109, 157, 197, 1) 70%
+  );
+  font-family: "Red Hat Display", sans-serif;
+  width: 60%;
+  border-radius: 15px;
+  margin: auto;
+  text-align: center;
+}
+.confirm-title {
+  margin: auto;
+  margin-top: 20px;
+  padding: 15px 0;
+  width: 100%;
+  font-weight: 900;
+  text-align: center;
+  color: #3066be;
+  font-size: 7vw;
+}
+#confirmBody {
+  width: 80%;
+  margin: auto;
+  font-size: larger;
+  padding: 20px;
+}

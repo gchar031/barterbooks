@@ -4,12 +4,11 @@
   font-family: "Red Hat Display", sans-serif;
 }
 .detail-title {
-  font-family: "Red Hat Display", sans-serif;
   width: 100%;
   font-weight: 900;
   text-align: center;
   color: #3066be;
-  font-size: xx-large;
+  font-size: 7vw;
 }
 .book-details img {
   max-height: 220px;
@@ -27,7 +26,7 @@
 }
 .book-title {
   font-weight: bold;
-  font-size: larger;
+  font-size: 4vw;
   width: 100%;
 }
 #hr-div {
