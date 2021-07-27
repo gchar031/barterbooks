@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "../styles/Login.css";
 
 export default function Register(props) {
   const [formData, setFormData] = useState({
@@ -26,12 +27,14 @@ export default function Register(props) {
         handleRegister(formData);
       }}
       id="registerForm"
+      className="user-form"
     >
       <h2 className="subtitles">Register</h2>
       <label htmlFor="username"> Username:</label>
       <input
         type="text"
         name="username"
+        placeholder="Username"
         value={username}
         onChange={handleChange}
         required
@@ -41,6 +44,7 @@ export default function Register(props) {
       <input
         type="password"
         name="password"
+        placeholder="Password"
         value={password}
         onChange={handleChange}
         required
@@ -55,8 +59,7 @@ export default function Register(props) {
         onChange={handleChange}
         required
       />
-      {/* bug: input text for college will not appear */}
-      <label htmlFor="college_name"> College/University Name: </label>
+      <label htmlFor="college_name"> College / University Name: </label>
       <input
         type="text"
         id="college"
@@ -68,7 +71,10 @@ export default function Register(props) {
       <br />
       <button type="submit">Register</button>
       <p className="register_loginOp">
-        Already have an account? <Link to="/login">Sign in here!</Link>
+        Already have an account?{" "}
+        <Link to="/login" className="user-link">
+          Sign in here!
+        </Link>
       </p>
     </form>
   );

@@ -1,0 +1,46 @@
+/* gradient helper:  https://cssgradient.io/*/
+.user-form {
+  width: 80%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin: 10px auto;
+  font-family: "Red Hat Display", sans-serif;
+  background: rgb(17, 157, 164, 0.8);
+  border-radius: 15px;
+}
+.user-form > h2 {
+  color: #3066be;
+  width: 100%;
+}
+.user-form > label {
+  width: 40%;
+  text-align: left;
+  justify-items: left;
+  padding: 6px 0px;
+  margin: 5px -4px;
+  margin-bottom: 10px;
+}
+#college {
+  margin-top: 15px;
+}
+.user-form > input {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}
+.user-form > button {
+  width: 70%;
+  background-color: #3066be;
+  color: white;
+  padding: 5px;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.user-form > a:visited,
+a:link {
+  color: black;
+  text-decoration: underline;
+}

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import "../styles/Login.css";
 
 export default function Login(props) {
   const { handleLogin } = props;
@@ -24,32 +25,38 @@ export default function Login(props) {
         e.preventDefault();
         handleLogin(formData);
       }}
+      className="user-form"
     >
       <h2 className="subtitles">Login</h2>
-      <label>
-        <input
-          type="text"
-          name="username"
-          value={username}
-          onChange={handleChange}
-          required
-        />
-      </label>
+      <label htmlFor="username">Username</label>
+      <input
+        type="text"
+        name="username"
+        placeholder="Username"
+        value={username}
+        onChange={handleChange}
+        required
+      />
+
       <br />
-      <label>
-        <input
-          type="password"
-          name="password"
-          value={password}
-          onChange={handleChange}
-          required
-        />
-      </label>
+      <label htmlFor="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        placeholder="Password"
+        value={password}
+        onChange={handleChange}
+        required
+      />
+
       <br />
       <button type="submit">Login</button>
       <p className="register_loginOp">
         Do not have an account?
-        <Link to="/register">Sign up here!</Link>
+        <Link to="/register" className="user-link">
+          {" "}
+          Sign up here!
+        </Link>
       </p>
     </form>
   );

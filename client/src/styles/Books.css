@@ -76,6 +76,7 @@ a:link {
   margin-bottom: 10px;
   border-radius: 5px;
 }
+
 /* tablet media query */
 @media screen and (min-width: 700px) {
   .books-list {
