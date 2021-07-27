@@ -7,8 +7,7 @@
 }
 .layout-children {
   margin-top: 5vh;
-  min-height: 80vh;
-  max-height: 90vh;
+  margin-bottom: 5vh;
 }
 .App-logo {
   height: 40vmin;
@@ -43,4 +42,7 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@media screen and (min-width: 700px) {
 }

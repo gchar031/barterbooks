@@ -2,13 +2,12 @@ footer {
   display: flex;
   justify-content: space-evenly;
   font-family: "Red Hat Display", sans-serif;
-  font-size: 2vw;
   background: linear-gradient(
     0deg,
     rgba(34, 193, 195, 1) 0%,
     rgba(174, 236, 239, 1) 100%
   );
-  max-height: 5vh;
+  min-height: 7vh;
   width: 100%;
 }
 footer p {

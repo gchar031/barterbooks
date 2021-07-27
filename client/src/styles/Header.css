@@ -5,7 +5,7 @@ nav {
   background-color: #6d9dc5;
   color: white;
   font-family: "Red Hat Display", sans-serif;
-  max-height: 15vh;
+  max-height: 40vh;
 }
 nav a:visited,
 a:link {
@@ -74,6 +74,7 @@ a:link {
 @media screen and (min-width: 700px) {
   nav {
     font-size: 1.2em;
+    max-height: 15vh;
   }
   #login-btn {
     display: flex;
