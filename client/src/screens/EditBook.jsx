@@ -5,7 +5,7 @@ import "../styles/CreateEditForm.css";
 export default function EditBook(props) {
   const { handleUpdate, handleDelete, categories, bookList } = props;
   const { id } = useParams();
-  // console.log(id)
+
   const [bookData, setBookData] = useState({
     title: "",
     author: "",
@@ -40,7 +40,6 @@ export default function EditBook(props) {
 
   function handleChange(e) {
     const { name, value } = e.target;
-    console.log(name, value);
     setBookData((prevState) => ({
       ...prevState,
       [name]: value,
