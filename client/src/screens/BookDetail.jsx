@@ -2,7 +2,6 @@ import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getBook } from "../services/books";
 import "../styles/Details.css";
-// import "../styles/HrDetails.scss";
 
 export default function BookDetail(props) {
   const { students, categories, currentStudent } = props;
@@ -29,7 +28,11 @@ export default function BookDetail(props) {
         <div className="img-detail-div">
           <img src={book.img_url} alt={book.title} />
         </div>
-        <div id="hr-div">{/* <hr id="detail_divider" /> */}</div>
+        <div id="hr-div">
+          <span className="diamond" />
+          <hr id="detail-divider" />
+          <span className="diamond" />
+        </div>
         <section className="details">
           <p>Author: {book.author}</p>
           <p>

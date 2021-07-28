@@ -5,6 +5,7 @@
   flex-flow: row wrap;
   justify-content: center;
   margin: 10px auto;
+  padding: 10px;
   font-family: "Red Hat Display", sans-serif;
   background: rgb(17, 157, 164, 0.8);
   border-radius: 15px;
@@ -30,7 +31,7 @@
   border-radius: 5px;
 }
 .user-form > button {
-  width: 70%;
+  width: 35%;
   background-color: #3066be;
   color: white;
   padding: 5px;
@@ -43,4 +44,20 @@
 a:link {
   color: black;
   text-decoration: underline;
+}
+@media screen and (min-width: 900px) {
+  .user-form {
+    width: 50%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    margin: 10px auto;
+    font-family: "Red Hat Display", sans-serif;
+    background: rgb(17, 157, 164, 0.8);
+    border-radius: 15px;
+  }
+  .user-form > label,
+  .user-form > input {
+    width: 40%;
+  }
 }

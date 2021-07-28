@@ -1,11 +1,11 @@
-import '../styles/Header.css'
+import "../styles/Header.css";
 import { Link } from "react-router-dom";
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function Header(props) {
   const { currentStudent, handleLogout } = props;
-  const [menuDisplay, setMenuDisplay] = useState(null)
-  
+  const [menuDisplay, setMenuDisplay] = useState(null);
+
   function checkLogin() {
     return currentStudent ? (
       <div id="welcome" onClick={handleLogout}>
@@ -23,25 +23,23 @@ export default function Header(props) {
         </div>
         <div id="login-btn">
           <Link to="/login" className="menu-link">
-              <i className="fas fa-sign-in-alt">
-                <p className="menup">Login</p>
+            <i className="fas fa-sign-in-alt">
+              <p className="menup">Login</p>
             </i>
-            
           </Link>
         </div>
       </div>
     );
   }
 
-
   return (
     <nav>
       <p onClick={() => setMenuDisplay("show")} id="menu-btn">
         <i className="fas fa-bars ">
-          <span className="menup">  Menu</span>
+          <span className="menup"> Menu</span>
         </i>
       </p>
-      <Link to="/" className="title-link">
+      <Link to="/books" className="title-link">
         <h1 id="title">Barter Books</h1>
       </Link>
       {checkLogin()}
@@ -53,7 +51,7 @@ export default function Header(props) {
           <li>Books</li>
         </Link>
         {currentStudent ? (
-          <Link to="/create" >
+          <Link to="/create">
             <li>Create Book</li>
           </Link>
         ) : (
