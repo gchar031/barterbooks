@@ -40,16 +40,16 @@ The **Barter Books** MVP is to meet full CRUD on the back-end and front-end for 
 [All Wireframes](https://www.figma.com/file/8GXDO9ps9ghyWnC795s0JQ/BarterBooks?node-id=18%3A85)
 
 - Mobile Landing
-<img src="https://user-images.githubusercontent.com/43050919/126642220-08bec1ff-e4df-4f13-b48a-ff52fdc1c80c.png" width="400" height="600" />
+<img src="https://user-images.githubusercontent.com/43050919/127258200-74fe266b-337b-444b-99f0-9e11db4131d9.png" width="400" height="600" />
 
 - Mobile Books Index
-<img src="https://user-images.githubusercontent.com/43050919/126674094-75c53096-627e-4efd-812f-23270e294e50.png" width="400" height="600"/>
+<img src="https://user-images.githubusercontent.com/43050919/127258182-b1cfc2c2-0b79-408a-a6b6-fdedf36033bc.png" width="400" height="600"/>
 
 - Mobile Book Detail 
-<img src="https://user-images.githubusercontent.com/43050919/126674175-c5196161-7518-424a-aa13-7d12f108dbb1.png" width="400" height="600"/>
+<img src="https://user-images.githubusercontent.com/43050919/127258162-faba264c-381a-47cb-9061-c7d37e0735ed.png" width="400" height="600"/>
 
 - Mobile Create Book
-<img src="https://user-images.githubusercontent.com/43050919/126674238-f95ee838-16a4-458e-b3e2-01564a3b889f.png" width="400" height="600"/>
+<img src="https://user-images.githubusercontent.com/43050919/127258122-b6895926-e32b-4d24-adbc-50cc7030f833.png" width="400" height="600"/>
 
 - Desktop Book Index
 <img src="https://user-images.githubusercontent.com/43050919/126674429-ae4b5275-8553-46f0-8105-98a61e6a3c98.png" width="900" height="600"/>
@@ -77,14 +77,7 @@ src
 |__ components/
       |__ Header.jsx
       |__ Footer.jsx
-      |__ Books.jsx
-      |__ BookDetail.jsx
-      |__ CreateBook.jsx
-      |__ EditBook.jsx
-      |__ Confirmation.jsx
-      |__ Login.jsx
-      |__ Register.jsx
-      |__ Home.jsx
+      |__ Layout.jsx
 |__ screens/
       |__ Books.jsx
       |__ BookDetail.jsx
@@ -98,14 +91,14 @@ src
       |__ api-config.js
       |__ categories.js
       |__ books.js
+      |__ students.js
       |__ auth.js
 |__ containers/
       |__ MainCointainer.jsx
 |__ styles/
       |__ Books.css
-      |__ BookDetail.css
-      |__ CreateBook.css
-      |__ EditBook.css
+      |__ Details.css
+      |__ CreateEditForm.css
       |__ Confirmation.css
       |__ Login.css
       |__ Register.css
@@ -148,7 +141,7 @@ src
 | Style Book Detail    |    M     |   3 hrs      |    3 hrs     |   3 hrs    |
 | Style Confirmation Page    |   L     |   3 hrs      |    3 hrs     |   3 hrs    |
 | Test for Bugs    |   H     |   3 hrs      |    3 hrs     |   3 hrs    |
-| TOTAL               |     -    |     70 hrs      |    70 hrs     |     TBD     |
+| TOTAL               |     -    |     70 hrs      |    50 hrs     |     42hrs     |
 
 
 <br>
@@ -186,5 +179,5 @@ code_snippet
 ## Code Issues & Resolutions
 
 > Use this section to list of all major issues encountered and their resolution.
-- [ ] Issue 1 
-- [ ] Issue 2
+- [ ] User login state throughout all pages and using login information.
+- [ ] All elements used in Figma design not being viable due to time using CSS code.
